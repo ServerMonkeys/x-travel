@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://vendia.net/schemas/demos/product.json",
+  "title": "Personal",
+  "description": "Personal information",
+  "type": "object",
+  "properties": {
+    "Person": {
+      "description": "Personal information",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fname": {
+            "description": "fname",
+            "type": "string"
+          },
+          "lname": {
+            "description": "lname",
+            "type": "string"
+          },
+          "id": {
+            "description": "pid",
+            "type": "string"
+          },
+          "ssn": {
+            "description": "ssn",
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

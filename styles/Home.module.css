@@ -65,7 +65,7 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
+.grid-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,4 +126,9 @@
   .logo img {
     filter: invert(1);
   }
+}
+
+
+.card-container {
+  @apply box-border w-full h-64 overflow-visible grid content-center grid-rows-4 grid-cols-1 auto-rows-auto
 }
