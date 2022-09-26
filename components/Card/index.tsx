@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import getQuery from "../../libs/pulls/logic";
+import Node1 from "../../libs/client";
 import { CheckCircle } from "phosphor-react";
 
 interface CardProps {
-    details? : String
-    status? : String
-    agencyFullName? : String
+  details?: String;
+  status?: String;
+  agencyFullName?: String;
 }
 
-export const BaseCard: React.FC<CardProps> = (props) =>{
-    return (
-        <div className=" flex flex-col w-64 h-28 bg-white p-3 
-        hover:scale-105 ease-in-out duration-150  gap-1
-        justify-center text-center items-center rounded-2xl drop-shadow-lg">
-            <h2 className=" drop-shadow-md text-blue-500 font-semibold text-2xl w-full">
-                {props.agencyFullName}
-            </h2>
-            <div className=" bg-slate-400 rounded-xl p-1 w-fit h-fit m-1">
-                <p className="  px-1 font-extralight">{props.status}</p>
-            </div>
-        </div>
-    )
-}
+
+export const BaseCard: React.FC<CardProps> = (props) => {
+  // if status changes due to submit of user, run a query
+  const [data, setData] = useState("");
+
+
+  return (
+    <div
+      className=" border-gray-200 border-2 flex flex-col w-64 h-28 bg-white  dark:bg-slate-400 p-3 
+        hover:scale-105 hover:drop-shadow-2xl
+        ease-in-out duration-100  gap-1
+        justify-center text-center items-center rounded-2xl drop-shadow-lg"
+    >
+      <h2 className="text-blue-500 dark:text-white drop-shadow-md  font-semibold text-2xl w-full">
+        {props.agencyFullName}
+      </h2>
+      <div className=" dark:text-slate-400 bg-slate-400 rounded-xl p-1 w-fit h-fit m-1">
+        <p className="  px-1 font-extralight">{props.status}</p>
+      </div>
+    </div>
+  );
+};
