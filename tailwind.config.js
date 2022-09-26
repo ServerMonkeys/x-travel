@@ -1,22 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     backgroundPosition: {
-      'top-center': 'center top 5rem',
-
+      'top-center': 'center top 5rem'
     },
-    theme:{
-      container:{
-        center: true,
-      },
+    theme: {
+      container: {
+        center: true
+      }
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '150': '1120px'
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 }
-

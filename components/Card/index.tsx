@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from "react";
-import getQuery from "../../libs/pulls/logic";
-import Node1 from "../../libs/client";
-import { CheckCircle } from "phosphor-react";
+import React, { useEffect, useState } from 'react'
+import { CheckCircle } from 'phosphor-react'
 
 interface CardProps {
-  details?: String;
-  status?: String;
-  agencyFullName?: String;
+  details?: String
+  status?: String
+  agencyFullName?: String
 }
 
-
-export const BaseCard: React.FC<CardProps> = (props) => {
+export const BaseCard: React.FC<CardProps> = props => {
   // if status changes due to submit of user, run a query
-  const [data, setData] = useState("");
-
+  const [data, setData] = useState('')
 
   return (
     <div
@@ -29,5 +25,5 @@ export const BaseCard: React.FC<CardProps> = (props) => {
         <p className="  px-1 font-extralight">{props.status}</p>
       </div>
     </div>
-  );
-};
+  )
+}

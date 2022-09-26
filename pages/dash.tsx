@@ -3,8 +3,6 @@ import React, { useState } from 'react'
 import { BaseCard } from '../components/Card'
 import styles from '../styles/Home.module.css'
 import Notification from '../components/Verified'
-import Loader from '../components/Loading/loader'
-import { Node1, client2 } from '../libs/client'
 
 export const Dash: NextPage = () => {
   const [inputValue, setInputValue] = useState('')
@@ -17,7 +15,7 @@ export const Dash: NextPage = () => {
 
   return (
     <div className={styles.container}>
-      <div className="min-h-screen flex flex-1 flex-col justify-center items-center box-border relative  bg-[url('/VendiaSvg.svg')]  bg-top-center bg-no-repeat  ">
+      <div className="min-h-screen flex flex-1 flex-col justify-center items-center box-border relative  bg-[url('/VendiaData.svg')]  bg-top-center bg-no-repeat  ">
         <div className="grid relative grid-cols-3 auto-rows-auto gap-10 overflow-visble ">
           <BaseCard agencyFullName={'Department of State'} status={'ready'} />
           <BaseCard agencyFullName={'Social Security'} status={'ready'} />
