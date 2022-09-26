@@ -10,8 +10,8 @@ export const Home: NextPage = () => {
     <div className="min-h-screen h- flex flex-1 flex-col justify-center items-center box-border relative">
       <div className="Banner-Hero bg-black h-150 w-full justify-center flex flex-col text-center items-center">
         <div className=" w-w-img h-h-img">
-          <div className=" my-16">
-            <h1 className="font-Manrope text-5xl font-bold m-4">Security</h1>
+          <div className=" my-12">
+            <h1 className="font-Manrope text-5xl font-bold m-4">Security 🔒</h1>
           </div>
           <Image
             className=""
@@ -20,6 +20,9 @@ export const Home: NextPage = () => {
             objectFit="contain"
             alt="picture of hero image 5g iphone"
           />
+          <div className="text-container w-full text-center">
+            <h1 className=" font-Manrope font-bold text-4xl">modern concerns meeting modern solutions</h1>
+          </div>
         </div>
         <div></div>
         test

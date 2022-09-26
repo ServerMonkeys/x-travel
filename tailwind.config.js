@@ -17,8 +17,8 @@ module.exports = {
         Manrope: ['Manrope', 'sans-serif']
       },
       spacing: {
-        'w-img': '800px',
-        'h-img': '1200px',
+        'w-img': '900px',
+        'h-img': '1000px',
         '150': '1146px'
       }
     }
