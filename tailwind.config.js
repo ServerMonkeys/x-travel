@@ -12,8 +12,14 @@ module.exports = {
       }
     },
     extend: {
+      fontFamily: {
+        Montserrat: ['Montserrat', 'sans-serif'],
+        Manrope: ['Manrope', 'sans-serif']
+      },
       spacing: {
-        '150': '1120px'
+        'w-img': '800px',
+        'h-img': '1200px',
+        '150': '1146px'
       }
     }
   },
