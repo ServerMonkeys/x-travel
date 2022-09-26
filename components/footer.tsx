@@ -1,4 +1,4 @@
-export const Navbar = () => {
+export const Footer = () => {
   return <></>
 }
-export default Navbar
+export default Footer;
