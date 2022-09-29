@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     backgroundPosition: {
       center: 'center',
-      'top-center': 'center top 5rem'
+      'top-center': 'center top 5rem',
+      bottom: 'bottom'
     },
     theme: {
       container: {
@@ -15,7 +16,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-banner': "url('../public/assets/PhoneHero.png')",
-        'pattern-svg': "url('../public/assets/BlobPattern.svg')"
+        'pattern-svg': "url('../public/assets/SpiralSvg.svg')"
       },
 
       fontFamily: {
