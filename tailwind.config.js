@@ -16,7 +16,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-banner': "url('../public/assets/PhoneHero.png')",
-        'pattern-svg': "url('../public/assets/SpiralSvg.svg')"
+        'pattern-svg': "url('../public/assets/SpiralSvg.svg')",
+        'line-svg': "url('../public/assets/lineDash.svg')",
+        'protocol-x': "url('../public/assets/ProtocolX2.svg')"
       },
 
       fontFamily: {
