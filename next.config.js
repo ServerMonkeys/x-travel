@@ -6,5 +6,4 @@ const nextConfig = {
     domains: ['avatars.githubusercontent.com']
   }
 }
-
-export default nextConfig
+module.exports = nextConfig
