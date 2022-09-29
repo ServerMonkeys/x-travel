@@ -14,9 +14,9 @@ export const BaseCard: React.FC<CardProps> = props => {
   return (
     <div
       className=" border-gray-200 border-2 flex flex-col w-64 h-28 bg-white  dark:bg-slate-400 p-3 
-        hover:scale-105 hover:drop-shadow-2xl
+        hover:scale-105 
         ease-in-out duration-100  gap-1
-        justify-center text-center items-center rounded-2xl drop-shadow-lg"
+        justify-center text-center items-center rounded-2xl "
     >
       <h2 className="text-blue-500 dark:text-white drop-shadow-md  font-semibold text-2xl w-full">
         {props.agencyFullName}
