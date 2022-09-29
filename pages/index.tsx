@@ -6,20 +6,23 @@ import Link from 'next/link'
 import HeroImage from '../public/assets/PhoneHero.png'
 import Image from 'next/image'
 import Blob from '../public/assets/BlobColor.svg'
+import Dash from './dash'
 
 export const Home: NextPage = () => {
   return (
-    <div className="min-h-screen h- flex flex-1 flex-col justify-start items-center box-border relative">
+    <div className="min-h-screen h- flex flex-1 flex-col justify-start items-center box-border relative transition ease-in-out delay-150">
       <div className="Banner-Hero bg-black h-800 w-full justify-start flex flex-col text-center items-center">
         <div className=" w-w-img h-h-img flex flex-col items-center">
           <h1 className="font-Manrope text-5xl font-bold m-6 text-white shadow-md">Travel X</h1>
           <div className=" w-w-img h-c-h bg-hero-banner bg-contain bg-no-repeat flex flex-col-reverse bg-center justify-center ">
-            <h2 className=" font-bold text-white text-6xl font-Manrope mt-44">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Secure</span>
+            <h2 className=" font-bold text-white text-6xl font-Manrope mt-44 hover:opacity-90">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+                <Link href={'/dash'}>Secure</Link>
+              </span>
             </h2>
           </div>
           <div className="text-container w-full text-center">
-            <h1 className="font-Manrope font-bold text-white text-4xl">modern concerns meeting modern solutions</h1>
+            <h1 className="font-Manrope font-bold text-white text-4xl">Click on Secure to get the dashboard</h1>
           </div>
         </div>
       </div>
