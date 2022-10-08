@@ -22,32 +22,4 @@ export const clientDOS = createVendiaClient({
   websocketUrl: `wss://765bybgp7i.execute-api.us-west-1.amazonaws.com/graphql`,
   apiKey: `3ZRpSMsxRZprzstjLTLaBJChKpAJorQ6JaQZmvaZVxxL`
 })
-
-export default client
 const testNumber = 404404444
-
-export const getPerson = () => {
-  ;`query list_allPersons {
-  list_PersonItems(filter: {ssn: {eq: 404404444}}) {
-    _PersonItems {
-      first_name
-      ssn
-      last_name
-      dob
-      city
-      country
-    }
-  }
-}
-`
-}
-
-export const fetchAgency = (agency: string) => {
-  if (agency == 'SS') {
-    return clientSS
-  } else if (agency == 'DOS') {
-    return clientDOS
-  } else if (agency == 'DMV') {
-    return clientDMV
-  }
-}
