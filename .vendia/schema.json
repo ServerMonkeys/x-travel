@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SS",
+  "description": "Database for Social Security Administration",
+  "type": "object",
+  "properties": {
+    "Person": {
+      "description": "Personal information from SS's database",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ssn": {
+            "description": "SSN",
+            "type": "number"
+          },
+          "first_name": {
+            "description": "First name",
+            "type": "string"
+          },
+          "last_name": {
+            "description": "Last name",
+            "type": "string"
+          },
+          "dob": {
+            "description": "Date of Birth",
+            "type": "string"
+          },
+          "street_address": {
+            "description": "street address",
+            "type": "string"
+          },
+          "city": {
+            "description": "City",
+            "type": "string"
+          },
+          "state": {
+            "description": "State",
+            "type": "string"
+          },
+          "zip_code": {
+            "description": "Zip code",
+            "type": "string"
+          },
+          "country": {
+            "description": "Country",
+            "type": "string"
+          },
+          "job": {
+            "description": "Job title",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
