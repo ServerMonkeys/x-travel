@@ -1,5 +1,7 @@
 import { NextPage } from 'next'
-import React, { useState } from 'react'
+import SearchBar from '../components/test'
+import SS_Client from '../Libs/client'
+import React, { useEffect, useState } from 'react'
 import { BaseCard } from '../components/Card'
 import styles from '../styles/Home.module.css'
 import Notification from '../components/Verified'
@@ -9,14 +11,13 @@ export const Dash: NextPage = () => {
   const onChangeHandler = (e: any) => {
     e.preventDefault()
     const val = e.target.value
-    console.log(val)
     setInputValue(val)
+    console.log('fetching data')
   }
-
   return (
     <div className={styles.container}>
       <div className="min-h-screen flex flex-1 flex-col justify-center items-center box-border relative  bg-[url('/VendiaData.svg')]  bg-top-center bg-no-repeat  ">
-        <div className="grid relative grid-cols-3 auto-rows-auto gap-10 overflow-visble ">
+        <div className="grid relative grid-cols-3 auto-rows-auto gap-10 overflow-visible ">
           <BaseCard agencyFullName={'Department of State'} status={'ready'} />
           <BaseCard agencyFullName={'Social Security'} status={'ready'} />
           <BaseCard agencyFullName={'Dept Motor Vehicles'} status={'ready'} />
@@ -27,6 +28,7 @@ export const Dash: NextPage = () => {
           onSubmit={e => {
             e.preventDefault()
             console.log('submitted ✅')
+            console.log(inputValue)
           }}
         >
           <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
@@ -74,8 +76,8 @@ export const Dash: NextPage = () => {
           <Notification name="Nelson" occupation="President" />
         </div>
       </div>
+      <SearchBar />
     </div>
   )
 }
-
 export default Dash

@@ -15,6 +15,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
+        'xlogo': "url('../public/assets/SimpleXLogo.svg')",
         'hero-banner': "url('../public/assets/PhoneHero.png')",
         'pattern-svg': "url('../public/assets/SpiralSvg.svg')",
         'line-svg': "url('../public/assets/lineDash.svg')",
