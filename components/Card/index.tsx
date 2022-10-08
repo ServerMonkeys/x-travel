@@ -21,8 +21,8 @@ export const BaseCard: React.FC<CardProps> = props => {
       <h2 className="text-blue-500 dark:text-white drop-shadow-md  font-semibold text-2xl w-full">
         {props.agencyFullName}
       </h2>
-      <div className=" dark:text-slate-400 bg-slate-400 rounded-xl p-1 w-fit h-fit m-1">
-        <p className="  px-1 font-extralight">{props.status}</p>
+      <div className=" dark:text-slate-400 bg-slate-200 rounded-xl p-1 w-fit h-fit m-1">
+        <p className=" px-1 font-semibold">{props.status}</p>
       </div>
     </div>
   )

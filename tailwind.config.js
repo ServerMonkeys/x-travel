@@ -15,11 +15,12 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'xlogo': "url('../public/assets/SimpleXLogo.svg')",
+        xlogo: "url('../public/assets/SimpleXLogo.svg')",
         'hero-banner': "url('../public/assets/PhoneHero.png')",
         'pattern-svg': "url('../public/assets/SpiralSvg.svg')",
         'line-svg': "url('../public/assets/lineDash.svg')",
-        'protocol-x': "url('../public/assets/ProtocolX2.svg')"
+        'protocol-x': "url('../public/assets/ProtocolX2.svg')",
+        wave: "url('../public/assets/waves.svg')"
       },
 
       fontFamily: {
