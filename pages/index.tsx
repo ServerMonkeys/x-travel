@@ -1,8 +1,28 @@
 import Link from 'next/link'
+import { Canvas } from '@react-three/fiber'
+import { Stars, Text } from '@react-three/drei'
+import Viewer from '../components/threejs/ModelViewer'
 
 export const Home = () => {
   return (
     <div className="font-Manrope min-h-screen flex flex-1 flex-col justify-start items-center box-border relative transition ease-in-out delay-150">
+      <div className={` h-800 w-full bg-black relative`}>
+        <Canvas>
+          <Stars />
+        </Canvas>
+
+        <div
+          className={` pointer-events-none absolute h-fit w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}
+        >
+          <Viewer />
+        </div>
+
+        <div
+          className={`absolute h-fit w-fit text-center flex p-5 mx-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}
+        >
+          <h1 className={`text-6xl font-bold text-white`}>fast, secure, protected</h1>
+        </div>
+      </div>
       <div className={'Banner-Hero bg-black h-800 w-full justify-start flex flex-col text-center items-center'}>
         <div className={' w-w-img h-h-img flex flex-col items-center'}>
           <div className={'bg-opacity-50 '}>
