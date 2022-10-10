@@ -2,24 +2,7 @@ import { useState } from 'react'
 import { clientDMV, clientSS, clientDOS } from '../components/getClient'
 import { fetchDMV_Query, fetchDOS_Query, fetchSS_Query } from '../Libs/queries.js'
 
-import { stringify } from 'querystring'
-
-const fetchSS = async (ssn_number: number) => {
-  const data = await clientSS.request(fetchSS_Query(ssn_number))
-  console.log('SS --> ', data)
-}
-
-const fetchDOS = async (ssn_number: number) => {
-  const data = await clientDOS.request(fetchDOS_Query(ssn_number))
-  console.log('DOS -->', data)
-}
-
-const fetchDMV = async (ssn_number: number) => {
-  const data = await clientDMV.request(fetchDMV_Query(ssn_number))
-  console.log('DMV --> ', data)
-}
-
-export const SearchForm = () => {
+export const SearchForm = ({ onChange }: any) => {
   const [ssn, setSSN] = useState('')
 
   const onChangeHandler = async (e: any) => {
@@ -27,11 +10,8 @@ export const SearchForm = () => {
     setSSN(val)
   }
   const onSubmitHandler = () => {
+    onChange(ssn)
     const fssn = Number(ssn)
-    console.log('logging -> ' + fssn)
-    fetchDMV(fssn)
-    fetchDOS(fssn)
-    fetchSS(fssn)
   }
   return (
     <form

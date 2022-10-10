@@ -16,6 +16,6 @@
     "incremental": true,
     "noImplicitAny": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "Libs/queries.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "Libs/queries.js", "Libs/client.js"],
   "exclude": ["node_modules"]
 }

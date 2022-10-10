@@ -60,3 +60,17 @@ export const fetchSS_Query = ssn_number => {
 }
 `
 }
+
+export const fetchData = async (client, func, ssn_number) => {
+  if (!ssn_number) return
+  ssn_number = Number(ssn_number)
+  console.log('fetch data starting')
+  try {
+    const data = await client.request(func(ssn_number))
+    return data.list_PersonItems._PersonItems[0]
+  } catch (e) {
+    console.log(e)
+  } finally {
+    console.log('finished fetchData')
+  }
+}
