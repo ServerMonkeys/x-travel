@@ -17,7 +17,7 @@ export default function Navbar() {
               <div className="flex space-x-2 items-center h-10">
                 <div>
                   <a href="/" className="flex items-center px-2">
-                    <h2 className={'font-bold text-2xl '}>travel x</h2>
+                    <h2 className={'font-bold text-2xl text-pink-200'}>travel x</h2>
                   </a>
                 </div>
                 <div className="flex items-center space-x-1">
