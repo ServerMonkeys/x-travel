@@ -85,7 +85,7 @@ export const fetchSS_Query = (ssn_number:string) => {
 `
 }
 
-//update person function
+//update person function1
 export const updatePerson = (id:string, colName:any, value:any): string => {
   return `mutation updatePerson {
     update_Person(
