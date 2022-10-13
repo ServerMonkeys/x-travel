@@ -1,9 +1,16 @@
 import {NextPage} from 'next'
-import fetchData, {fetchSS_Query,fetchDOS_Query, fetchDMV_Query, clientDOS, clientDMV, clientSS} from "../helper/fetchData";
+import fetchData, {
+  clientDMV,
+  clientDOS,
+  clientSS,
+  fetchDMV_Query,
+  fetchDOS_Query,
+  fetchSS_Query
+} from "../helper/fetchData";
 import {SearchForm} from '../components/SearchForm'
 import {motion} from 'framer-motion'
 import React, {useEffect, useState} from 'react'
-import {BaseCard} from '../components/Card'
+import {BaseCard} from '../components/Card/Card'
 import Notification from '../components/Verified'
 
 export const Dash: NextPage = () => {
@@ -14,30 +21,33 @@ export const Dash: NextPage = () => {
   const [DOSStatus, setDOSStatus] = useState<string>('ready')
 
 
-  const getData = async (client:any, query: any, ssn: number, setState: any) : Promise<object> => {
-    setState('loading')
-    try{
-      return await Promise.resolve(fetchData(client, query, ssn))
-          .then(obj => {
-            if (obj) {
-              setState('fetched')
-              console.log(obj.first_name)
-              return obj;
-            }
-            setState('DNE')
-            return;
-          })
-    } catch (e) {
-      setState('error')
-      console.log(e)
-    }
+  const [DOS_data, setDOS_data] = useState([]);
+  const [SS_data, setSS_data] = useState([]);
+  const [DMV_data, setDMV_data] = useState([]);
+
+
+  const processData = (data:any) => {
+    console.log(data)
   }
 
+  const getData = async (client:any, query: any, ssn: number, setState: any, setData:any) => {
+    setState('loading')
+    return await fetchData(client, query, ssn)
+        .then(data =>{
+          if(data) {
+            setState('fetched')
+            setData(data);
+            processData(data)
+          }else {
+            setState('error')
+          }
+        })
+  }
   useEffect(() => {
     if (!SSN) return
-    const DOS_info = getData(clientDOS, fetchDOS_Query, SSN, setDOSStatus)
-    const SS_info = getData(clientSS, fetchSS_Query, SSN, setSSStatus)
-    const DMV_info = getData(clientDMV, fetchDMV_Query, SSN, setDMVStatus)
+    getData(clientDOS, fetchDOS_Query, SSN, setDOSStatus, setDOS_data)
+    getData(clientSS, fetchSS_Query, SSN, setSSStatus, setSS_data)
+    getData(clientDMV, fetchDMV_Query, SSN, setDMVStatus, setDMV_data)
   }, [SSN])
 
   return (

@@ -1,4 +1,4 @@
-import { createVendiaClient } from '@vendia/client/index'
+import {createVendiaClient} from '@vendia/client/index'
 
 export const clientDMV = createVendiaClient({
     apiUrl: `https://gs65cnv4f8.execute-api.us-west-1.amazonaws.com/graphql/`,
@@ -99,6 +99,7 @@ export const fetchData = async (client: { request: (arg0: any) => any }, func: (
         return null;
     }
 };
+
 
 export default fetchData;
 
