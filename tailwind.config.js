@@ -22,6 +22,13 @@ module.exports = {
         'protocol-x': "url('../public/assets/ProtocolX2.svg')",
         wave: "url('../public/assets/waves.svg')"
       },
+      colors: {
+
+        stop1:"#e7dcff ",
+        stop2:"#ffeacb",
+        stop3:"#f6f1ff",
+        "grad-white": ' linear-gradient(45deg, #e7dcff, #ffeacb, #f6f1ff);'
+      },
 
       fontFamily: {
         Montserrat: ['Montserrat', 'sans-serif'],
