@@ -85,6 +85,30 @@ export const fetchSS_Query = (ssn_number:string) => {
 `
 }
 
+export const updatePerson = (id:string, colName:any, value:any): string => {
+  return `mutation updatePerson {
+    update_Person(
+      id: "${id}"
+      syncMode: NODE_COMMITTED
+      input: {${colName}: ${value}}
+    ) {
+      result {
+        city
+        country
+        dob
+        first_name
+        job
+        last_name
+        ssn
+        state
+        street_address
+        zip_code
+      }
+    }
+  }
+`
+}
+
 export const fetchData = async (client: { request: (arg0: any) => any }, func: (arg0: number) => any, ssn_number: number) => {
     if (ssn_number) {
         try {
