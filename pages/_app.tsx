@@ -4,6 +4,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from '@material-tailwind/react'
 import Navbar from '../components/navbar'
+import Footer from "../components/footer";
 import { UserProvider } from '@auth0/nextjs-auth0'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
+        <Footer/>
     </UserProvider>
   )
 }
