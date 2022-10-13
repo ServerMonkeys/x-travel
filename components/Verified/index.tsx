@@ -2,12 +2,13 @@
 import Avatar from "../Avatar";
 import React from "react";
 
-const imgurl =
-  "https://www.csus.edu/university-advancement/university-foundation/meet-us/_internal/photos/robert-nelsen.jpg";
+//const imgurl =
+  //"https://www.csus.edu/university-advancement/university-foundation/meet-us/_internal/photos/robert-nelsen.jpg";
 
 type NProps = {
   name?: string;
   occupation?: string;
+  image?: string;
 };
 // serves as a container for all the information
 export const Notification = (props: NProps) => {
@@ -21,7 +22,7 @@ export const Notification = (props: NProps) => {
      ">
       <div className="flex flex-col items-center pb-10 m-4 ">
         <div className=" m-5">
-          <Avatar avatarImgUrl={imgurl} />
+          <Avatar avatarImgUrl={props.image} />
         </div>
         <h5 className="mb-1 text-xl font-bold text-gray-900">
           ✨ {props.name} ✨
