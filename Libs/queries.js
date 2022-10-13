@@ -67,7 +67,7 @@ export const fetchData = async (client, func, ssn_number) => {
   console.log('fetch data starting')
   try {
     const data = await client.request(func(ssn_number))
-    return data.list_PersonItems._PersonItems[0]
+    return data.list_PersonItems._PersonItems[0]//.first_name
   } catch (e) {
     console.log(e)
   } finally {

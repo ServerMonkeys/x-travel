@@ -7,12 +7,17 @@ import React, { SetStateAction, useEffect, useState } from 'react'
 import { BaseCard } from '../components/Card'
 import styles from '../styles/Home.module.css'
 import Notification from '../components/Verified'
-
+var fname = '';
+var lname = '';
+var job = '';
+var image = '';
 export const Dash: NextPage = () => {
   const [SSN, setSSN] = useState('')
   const [SSstatus, setSSStatus] = useState('ready')
   const [DMVStatus, setDMVStatus] = useState('ready')
   const [DOSStatus, setDOSStatus] = useState('ready')
+  
+  
 
   const getSocial = (input: string) => {
     setSSN(input)
@@ -25,6 +30,14 @@ export const Dash: NextPage = () => {
     if (data) {
       setState('fetched')
       console.log(data)
+      fname = data.first_name
+      lname = data.last_name
+      if (client == clientSS) {
+        job = data.job
+      }
+      if (client == clientDMV) {
+        image = data.photo
+      }
     } else {
       setState('error')
     }
@@ -50,7 +63,7 @@ export const Dash: NextPage = () => {
         <SearchForm onChange={getSocial} />
         <p>{SSN}</p>
         <div className="visible ease-in-out duration-200">
-          <Notification name="Nelson" occupation="President" />
+          <Notification name={fname + " " + lname} occupation={job} image = {image}/>
         </div>
       </div>
     </div>
