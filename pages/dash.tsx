@@ -5,8 +5,13 @@ import {motion} from 'framer-motion'
 import React, {useEffect, useState} from 'react'
 import {BaseCard} from '../components/Card'
 import Notification from '../components/Verified'
-
+var fname = '';
+var lname = '';
+var job = '';
+var image = '';
 export const Dash: NextPage = () => {
+  
+  
 
   const [SSN, setSSN] = useState<number>()
   const [SSstatus, setSSStatus] = useState<string>('ready')
