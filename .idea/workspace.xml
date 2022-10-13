@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="commmited some changes to to the file">
+    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="added a refresh button with state">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Card/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper/fetchData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helper/fetchData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SearchForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sometext.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/dash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dash.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +24,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2G49iOjsuDwjNM6CWFZ2xD7CJAg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -41,7 +47,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "configurable.group.editor",
     "settings.editor.splitter.proportion": "0.17692852",
     "ts.external.directory.path": "/Users/christianleyvamendez/Documents/Programming/School/131/x-travel-beta/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -74,8 +80,19 @@
       <updated>1665637117404</updated>
       <workItem from="1665637122580" duration="18778000" />
       <workItem from="1665689288319" duration="1924000" />
-      <workItem from="1665691416801" duration="4794000" />
+      <workItem from="1665691416801" duration="5545000" />
+      <workItem from="1665698716025" duration="5553000" />
+      <workItem from="1665713085326" duration="785000" />
+      <workItem from="1665713879849" duration="5200000" />
     </task>
+    <task id="LOCAL-00001" summary="commmited some changes to to the file">
+      <created>1665696432739</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665696432739</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,7 +103,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/testing" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -94,7 +123,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commmited some changes to to the file" />
-    <option name="LAST_COMMIT_MESSAGE" value="commmited some changes to to the file" />
+    <MESSAGE value="added a refresh button with state" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a refresh button with state" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
