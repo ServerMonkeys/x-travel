@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
+import Image from 'next/image'
 
-import React from "react";
+import React from 'react'
 
 interface AvatarProps {
-    avatarImgUrl? : string;
+  avatarImgUrl?: string
 }
-
 
 export default function Avatar(props: AvatarProps) {
   return (
@@ -14,8 +13,8 @@ export default function Avatar(props: AvatarProps) {
       <img
         src={props.avatarImgUrl}
         alt="picture of user"
-        className=" ease-in-out duration-300 hover:scale-105 rounded-full w-28 h-28 border-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 "
+        className=" ease-in-out duration-300 rounded-full w-28 h-28 border-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 "
       />
     </div>
-  );
+  )
 }
