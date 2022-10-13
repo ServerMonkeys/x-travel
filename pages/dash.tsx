@@ -5,10 +5,10 @@ import {motion} from 'framer-motion'
 import React, {useEffect, useState} from 'react'
 import {BaseCard} from '../components/Card'
 import Notification from '../components/Verified'
-var fname = '';
-var lname = '';
-var job = '';
-var image = '';
+let fname = '';
+let lname = '';
+let job = '';
+let image = '';
 export const Dash: NextPage = () => {
   
   
@@ -27,7 +27,9 @@ export const Dash: NextPage = () => {
             if (obj) {
               setState('fetched')
               console.log(obj.first_name)
+              //console.log(obj)
               return obj;
+              
             }
             setState('DNE')
             return;
@@ -43,6 +45,7 @@ export const Dash: NextPage = () => {
     const DOS_info = getData(clientDOS, fetchDOS_Query, SSN, setDOSStatus)
     const SS_info = getData(clientSS, fetchSS_Query, SSN, setSSStatus)
     const DMV_info = getData(clientDMV, fetchDMV_Query, SSN, setDMVStatus)
+    
   }, [SSN])
 
   return (
