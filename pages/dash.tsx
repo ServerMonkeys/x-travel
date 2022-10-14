@@ -81,9 +81,10 @@ export const Dash: NextPage = () => {
                 scale:1.05
               }}
               whileTap={{
-                scale: 0.9,
-                rotate: 360,
-                transition: { type: "spring", stiffness: 100, duration:0.9 },
+                scale: 0.95,
+                rotate: 660,
+
+                transition: { type: "spring", stiffness: 500,  },
               }}
               onClick={() => {
                 Press(!button_press)
