@@ -1,10 +1,18 @@
 import {NextPage} from 'next'
-import fetchData, {fetchSS_Query,fetchDOS_Query, fetchDMV_Query, clientDOS, clientDMV, clientSS} from "../helper/fetchData";
+import fetchData, {
+  clientDMV,
+  clientDOS,
+  clientSS,
+  fetchDMV_Query,
+  fetchDOS_Query,
+  fetchSS_Query
+} from "../helper/fetchData";
 import {SearchForm} from '../components/SearchForm'
 import {motion} from 'framer-motion'
 import React, {useEffect, useState} from 'react'
 import {BaseCard} from '../components/Card'
 import Notification from '../components/Verified'
+
 let fname = '';
 let lname = '';
 let job = '';
@@ -14,6 +22,7 @@ let dob = '';
 let dl = '';
 let pass_num = '';
 let pass_exp = '';
+
 export const Dash: NextPage = () => {
   
   let ssData: Object;
