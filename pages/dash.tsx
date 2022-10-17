@@ -8,15 +8,21 @@ import Notification from '../components/Verified'
 let fname = '';
 let lname = '';
 let job = '';
-let image = '';
+let imageDMV = '';
+let imageDOS = '';
+let dob = '';
+let dl = '';
+let pass_num = '';
+let pass_exp = '';
 export const Dash: NextPage = () => {
   
-  
+  let ssData: Object;
 
   const [SSN, setSSN] = useState<number>()
   const [SSstatus, setSSStatus] = useState<string>('ready')
   const [DMVStatus, setDMVStatus] = useState<string>('ready')
   const [DOSStatus, setDOSStatus] = useState<string>('ready')
+  const [VerifyStatus, setVerifyStatus] = useState<string>('Unverified')
 
 
   const getData = async (client:any, query: any, ssn: number, setState: any) : Promise<object> => {
@@ -28,6 +34,24 @@ export const Dash: NextPage = () => {
               setState('fetched')
               console.log(obj.first_name)
               //console.log(obj)
+
+              fname = obj.first_name;
+              lname = obj.last_name;
+              if (client == clientSS) {
+                job = obj.job
+              }
+              if (client == clientDMV) {
+                imageDMV = obj.photo
+                dl = obj.dl
+              }
+              dob = obj.dob;
+
+              if (client == clientDOS){
+                imageDOS = obj.photo
+                pass_num = obj.passport_num
+                pass_exp = obj.passport_exp
+              }
+
               return obj;
               
             }
@@ -45,7 +69,8 @@ export const Dash: NextPage = () => {
     const DOS_info = getData(clientDOS, fetchDOS_Query, SSN, setDOSStatus)
     const SS_info = getData(clientSS, fetchSS_Query, SSN, setSSStatus)
     const DMV_info = getData(clientDMV, fetchDMV_Query, SSN, setDMVStatus)
-    
+
+    //console.log(DOS_info)
   }, [SSN])
 
   return (
@@ -65,9 +90,13 @@ export const Dash: NextPage = () => {
           setSSN(e);
         }} />
         <p>{SSN}</p>
-        <div className=" invisible ease-in-out duration-200">
-          <Notification name="Nelson" occupation="President" />
-        </div>
+
+        {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
+          <div className="visible ease-in-out duration-200">
+            <Notification name={fname + " " + lname} occupation={job} imageDMV={imageDMV} imageDOS={imageDOS} dob={dob} dl={dl}
+                          pass_exp={pass_exp} pass_num={pass_num}/>
+          </div>
+        }
       </div>
     </div>
   )
