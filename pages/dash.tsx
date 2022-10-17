@@ -52,7 +52,6 @@ export const Dash: NextPage = () => {
           console.log('queried all data');
         })
   }, [SSN,button_press])
-
     //console.log(SS_data)
   return (
       <div className='w-full h-fit content-center bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex flex-col justify-items-start'>
