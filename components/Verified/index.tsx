@@ -14,7 +14,8 @@ type NProps = {
   dl?: string;
   pass_num?: string;
   pass_exp?: string;
-
+  address?: string;
+  phone_num?: string;
 };
 // serves as a container for all the information
 export const Notification = (props: NProps) => {
