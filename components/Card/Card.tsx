@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import React, {useEffect, useState} from 'react'
+import {motion} from 'framer-motion'
 
 interface CardProps {
   details?: String
@@ -47,14 +47,14 @@ export const BaseCard: React.FC<CardProps> = props => {
         ${shadowColor}
         ${loadState}
         justify-center text-center items-center rounded-2xl `}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.02  }}
 
     >
       <h2 className="text-blue-500 dark:text-white drop-shadow-md  font-semibold text-2xl w-full">
         {props.agencyFullName}
       </h2>
-      <div className={`dark:text-slate-400 ${statusColor} rounded-xl p-1 w-fit h-fit m-1`}>
-        <p className={`px-1 font-semibold ${StatusText}`}>{props.status}</p>
+      <div className={`dark:text-slate-400 ${statusColor} rounded-xl p-1 w-fit h-fit m-1 select-none cursor-pointer`}>
+        <p className={`px-1 font-semibold ${StatusText} select-none`}>{props.status}</p>
       </div>
     </motion.div>
   )

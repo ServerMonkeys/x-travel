@@ -2,7 +2,7 @@
 export const DemoCard = () => {
     return (
         <div
-            className=" rounded-3xl w-fit flex-col drop-shadow-2xl flex mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-16 bg-white shadow-xl rounded-lg text-neutral-800 bg-gradient-to-r from-stop1 to-stop2 to-stop3">
+            className=" invisible rounded-3xl w-fit flex-col drop-shadow-2xl flex mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-16 bg-white shadow-xl rounded-lg text-neutral-800 bg-gradient-to-r from-stop1 to-stop2 to-stop3">
 
             <div className="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden border-slate-600">
                 <img className="object-cover object-center h-32"
