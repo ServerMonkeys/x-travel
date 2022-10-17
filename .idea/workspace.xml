@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="hello test">
+    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Display card with info from all 3 databases">
+      <change afterPath="$PROJECT_DIR$/.env.local" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Verified/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Verified/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper/fetchData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helper/fetchData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dash.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,7 @@
       <workItem from="1665637122580" duration="18778000" />
       <workItem from="1665689288319" duration="1414000" />
       <workItem from="1665701175055" duration="1431000" />
-      <workItem from="1665962685114" duration="20652000" />
+      <workItem from="1665962685114" duration="22418000" />
     </task>
     <task id="LOCAL-00001" summary="hello test">
       <created>1665701635506</created>
@@ -98,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665701898388</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Display card with info from all 3 databases">
+      <created>1666038555283</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666038555283</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +135,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hello test" />
-    <option name="LAST_COMMIT_MESSAGE" value="hello test" />
+    <MESSAGE value="Display card with info from all 3 databases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Display card with info from all 3 databases" />
   </component>
 </project>
