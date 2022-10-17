@@ -12,6 +12,7 @@ import {SearchForm} from '../components/SearchForm'
 import {motion} from 'framer-motion'
 import React, {useEffect, useState} from 'react'
 import {BaseCard} from '../components/Card/Card'
+import Notification from '../components/Verified'
 
 export const Dash: NextPage = () => {
 
@@ -48,10 +49,10 @@ export const Dash: NextPage = () => {
     }
     fetchMyData()
         .finally(() => {
-          console.log('queried all data')
+          console.log('queried all data');
         })
   }, [SSN,button_press])
-
+    //console.log(SS_data)
   return (
       <div className='w-full h-fit content-center bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex flex-col justify-items-start'>
         <div className="relative box-border flex min-h-screen flex-1 flex-col items-center justify-center bg-no-repeat">
@@ -97,6 +98,12 @@ export const Dash: NextPage = () => {
                     clipRule="evenodd"/>
             </svg>
           </motion.button>
+            {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
+                <div className="visible ease-in-out duration-200">
+                    <Notification name={SS_data.first_name + " " + SS_data.last_name} occupation={SS_data.job} imageDMV={DMV_data.photo} imageDOS={DOS_data.photo} dob={SS_data.dob} dl={DMV_data.dl}
+                                  pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num}/>
+                </div>
+            }
         </div>
       </div>
   )
