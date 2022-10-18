@@ -114,6 +114,7 @@ export const Dash: NextPage = () => {
                     <VerifyCard message={'Verification Status'} status={verifyStatus}/>
                 </div>
             }
+
             {verifyStatus === 'Verified' &&
                 <div className="visible ease-in-out duration-200 ">
                     <Notification name={SS_data.first_name + " " + SS_data.last_name} occupation={SS_data.job} imageDMV={DMV_data.photo} imageDOS={DOS_data.photo} dob={SS_data.dob} dl={DMV_data.dl}
