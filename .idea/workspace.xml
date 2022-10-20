@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Display card with info from all 3 databases">
-      <change afterPath="$PROJECT_DIR$/helper/verifyData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/updatedmv/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Avatar/AvatarIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Avatar/AvatarIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/fetchData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helper/fetchData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/dash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dash.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +55,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages/updatedmv" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -88,6 +95,10 @@
       <workItem from="1666060011655" duration="3511000" />
       <workItem from="1666069738369" duration="819000" />
       <workItem from="1666106562553" duration="1299000" />
+      <workItem from="1666216208122" duration="761000" />
+      <workItem from="1666233872985" duration="748000" />
+      <workItem from="1666292390708" duration="4231000" />
+      <workItem from="1666302858715" duration="3986000" />
     </task>
     <task id="LOCAL-00001" summary="commmited some changes to to the file">
       <created>1665696432739</created>
@@ -117,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666047924128</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Display card with info from all 3 databases">
+      <created>1666122442592</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666122442592</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
