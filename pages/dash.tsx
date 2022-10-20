@@ -15,6 +15,8 @@ import {BaseCard} from '../components/Card/Card'
 import Notification from '../components/Verified'
 import verifyData from '../helper/verifyData';
 import {VerifyCard} from '../components/Card/verifyCard';
+import Router from 'next/router';
+
 
 export const Dash: NextPage = () => {
 
@@ -59,10 +61,19 @@ export const Dash: NextPage = () => {
           }
           else
             setVerifyStatus('Not Matched')
+
+          //console.log(updatePerson(clientDOS,DOS_data._id,'passport_exp','01-2030'));
         })
   }, [SSN,button_press])
 
-  console.log(SS_data)
+  console.log(DMV_data)
+
+  function sendDMVProps() {
+    Router.push({
+      pathname: "/updatedmv/[pid]",
+      query: {pid: DMV_data._id}
+    })
+  }
   return (
       <div className='w-full h-fit content-center bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex flex-col justify-items-start'>
         <div className="relative box-border flex min-h-screen flex-1 flex-col items-center justify-center bg-no-repeat">
@@ -92,9 +103,10 @@ export const Dash: NextPage = () => {
                 scale:1.05
               }}
               whileTap={{
-                scale: 0.9,
-                rotate: 360,
-                transition: { type: "spring", stiffness: 100, duration:0.9 },
+                scale: 0.95,
+                rotate: 660,
+
+                transition: { type: "spring", stiffness: 500,  },
               }}
               onClick={() => {
                 Press(!button_press)
@@ -113,10 +125,12 @@ export const Dash: NextPage = () => {
                     <VerifyCard message={'Verification Status'} status={verifyStatus}/>
                 </div>
             }
-            {verifyStatus === 'Verified' &&
+
+            {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
                 <div className="visible ease-in-out duration-200 ">
                     <Notification name={SS_data.first_name + " " + SS_data.last_name} occupation={SS_data.job} imageDMV={DMV_data.photo} imageDOS={DOS_data.photo} dob={SS_data.dob} dl={DMV_data.dl}
                                   pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num}/>
+                    <button onClick={() => sendDMVProps()}>Update DMV</button>
                 </div>
             }
         </div>

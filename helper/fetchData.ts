@@ -1,4 +1,4 @@
-import { createVendiaClient } from '@vendia/client/index'
+import {createVendiaClient} from '@vendia/client/index'
 
 export const clientDMV = createVendiaClient({
     apiUrl: `https://gs65cnv4f8.execute-api.us-west-1.amazonaws.com/graphql/`,
@@ -92,7 +92,7 @@ export const updatePerson_mutation = (id:string, entity_type:any, value:any): st
     update_Person(
       id: "${id}"
       syncMode: NODE_COMMITTED
-      input: {${entity_type}: ${value}}
+      input: {${entity_type}: "${value}"}
     ) {
       result {
         ssn

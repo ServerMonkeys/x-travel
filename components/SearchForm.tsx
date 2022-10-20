@@ -1,10 +1,15 @@
 import {ChangeEvent, FormEvent, useState} from 'react'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 
 
 export const SearchForm = ({ onChange }: any) => {
   const [ssn, setSSN] = useState<string>()
-  return <motion.form className=" w-96 m-10" onSubmit={function (e: FormEvent<HTMLFormElement
+  return <motion.form
+      className=" w-96 m-10"
+      initial={{opacity:0, scale: 0.8}}
+      animate={{opacity:1, scale:1}}
+      transition={{duration:0.8}}
+      onSubmit={function (e: FormEvent<HTMLFormElement
       >): void {
     e.preventDefault()
     onChange(ssn)
