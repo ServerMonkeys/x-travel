@@ -1,16 +1,21 @@
 import React from 'react'
-import {useRouter} from 'next/router'
 import {motion} from "framer-motion";
-import {clientDOS, updatePerson} from "../../helper/fetchData";
 
-function id() {
-    const router = useRouter()
-    const personID = router.query.id
+import fetchData, {
+    clientDMV,
+    clientDOS,
+    clientSS,
+    fetchDMV_Query,
+    fetchDOS_Query,
+    fetchSS_Query,
+    updatePerson
+} from "../helper/fetchData";
+
+
+
+
+export default function Update() {
     return (
-    <div>
-        <h1 className='text-black'>
-            {personID}
-        </h1>
         <>
             <div class="py-40 w-full bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex justify-around">
                 <motion.div
@@ -26,19 +31,19 @@ function id() {
 
                 >
                     <div className={`dark:text-slate-400  rounded-xl p-1 w-fit h-fit m-1 select-none cursor-pointer`}>
-                        <h2 className="text-blue-500 dark:text-white drop-shadow-md px-4 py-2 font-semibold text-2xl w-full">
-                            Update DMV
-                        </h2>
+                    <h2 className="text-blue-500 dark:text-white drop-shadow-md px-4 py-2 font-semibold text-2xl w-full">
+                        Update DMV
+                    </h2>
                         <div>
-                            <span class="flex justify-left text-gray-500 space-y-8"> Update Driver's License # </span>
-                            <input class="flex justify-around rounded border text-black" minLength={8}
-                                   maxLength={8}
-                                   type={"text"}></input>
+                    <span class="flex justify-left text-gray-500 space-y-8"> Update Driver's License # </span>
+                    <input class="flex justify-around rounded border text-black" minLength={8}
+                           maxLength={8}
+                           type={"text"}></input>
                         </div>
                         <div>
                         <span className="flex text-gray-500"> Update Photo
                     </span>
-                            <input className="flex justify-around rounded border"></input>
+                        <input className="flex justify-around rounded border"></input>
                         </div>
                     </div>
                     <div>
@@ -50,8 +55,5 @@ function id() {
             </div>
 
         </>
-    </div>
-  )
+    )
 }
-
-export default id;

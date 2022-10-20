@@ -27,28 +27,53 @@ export const Notification = (props: NProps) => {
      shadow-lg
      
      ">
-      <div className="flex flex-col items-center pb-10 m-4 ">
-        <div className="flex flex-wrap m-5">
-          <Avatar avatarImgUrl={props.imageDMV} /> <Avatar avatarImgUrl={props.imageDOS} />
+
+      <div className="flex flex-col items-center pb-10 m-10 ">
+        <div className="flex flex-wrap justify-items-center m-5">
+          <Avatar avatarImgUrl={props.imageDMV} />
+        <Avatar avatarImgUrl={props.imageDOS} />
         </div>
-        <h5 className="mb-1 text-xl font-bold text-gray-900 capitalize">
-          ✨ {props.name} ✨
-        </h5>
-        <span className="text-sm font-light text-gray-500 dark:text-gray-400">
+        <div
+            className=" text-black text-4xl h-16">
+          <div className="text-center">
+            <h4 class="text-transform: capitalize"> {props.name}</h4>
+          </div>
+        </div>
+        <h2 className="text-md font-light text-gray-500 font-bold dark:text-gray-400">
           {props.occupation}
-        </span>
-        <h6 className="mb-1 text-base font-normal text-gray-900">
-          Date of Birth: {props.dob}
-        </h6>
-        <h6 className="mb-1 text-base font-normal text-gray-900">
-          Driver's License Number: {props.dl}
-        </h6>
-        <h6 className="mb-1 text-base font-normal text-gray-900">
-          Passport Number: {props.pass_num}
-        </h6>
-        <h6 className="mb-1 text-base font-normal text-gray-900">
-          Passport Expiration Date: {props.pass_exp}
-        </h6>
+        </h2><div>
+        <div
+            className="px-0.5 py-2 my-4 bg-gradient-to-r bg-gradient-to-r from-fuchsia-800 to-fuchsia-500 flex  items-center rounded  shadow-lg transition-all transform-all hover:scale-105 cursor-pointer relative">
+          <div>
+            <div><b class ="font-black">DOB: </b> {props.dob}</div>
+          </div>
+        </div>
+        <div
+            className="px-0.5 py-2 my-3 bg-gradient-to-r bg-gradient-to-r from-fuchsia-800 to-fuchsia-500 flex  items-center   rounded shadow-lg transition-all transform-all hover:scale-105 cursor-pointer relative">
+          <div>
+            <div><b className="font-black">Driver's License #:</b> <h6>{props.dl}</h6></div>
+          </div>
+        </div>
+        <div
+            className="px-0.5 py-2 my-3 bg-gradient-to-r bg-gradient-to-r from-fuchsia-800 to-fuchsia-500 flex justify-around items-center rounded shadow-lg transition-all transform-all hover:scale-105 cursor-pointer relative">
+          <div>
+            <div><b className="font-black">Passport #: </b>
+              {props.pass_num}</div>
+          </div>
+        </div>
+        <div
+            className="px-0.5 py-2 my-3 bg-gradient-to-r bg-gradient-to-r from-fuchsia-800 to-fuchsia-500 flex justify-around items-center rounded  shadow-lg transition-all transform-all hover:scale-105 cursor-pointer relative">
+          <div>
+            <div><b className="font-black">Passport Exp Date:</b> {props.pass_exp}</div>
+          </div>
+        </div>
+        <div
+            className="px-0.5 py-2 my-3 bg-gradient-to-r bg-gradient-to-r from-fuchsia-800 to-fuchsia-500 flex justify-around items-center rounded  shadow-lg transition-all transform-all hover:scale-105 cursor-pointer relative">
+          <div>
+            <div><b className="font-black">Address:</b> {props.address}</div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   );

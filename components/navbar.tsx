@@ -24,7 +24,7 @@ export default function Navbar() {
                   {!isLoading && user && (
                     <a
                       href="/dash"
-                      className="hidden md:flex py-5 px-2 text-violet-600
+                      className="hidden md:flex py-5 px-2 text-slate-300
                       hover:text-violet-700"
                     >
                       Dashboard
@@ -34,7 +34,7 @@ export default function Navbar() {
                     <a
                       href="/about"
                       className="hidden md:flex py-5 px-2 text-slate-300
-                      hover:text-slate-400"
+                      hover:text-violet-700"
                     >
                       About
                     </a>
@@ -43,7 +43,7 @@ export default function Navbar() {
                     <a
                       href="/contact"
                       className="hidden md:flex py-5 px-2 text-slate-300
-                      hover:text-slate-400"
+                      hover:text-violet-700"
                     >
                       Contact
                     </a>
@@ -55,17 +55,17 @@ export default function Navbar() {
           <div className="flex items-center space-x-1">
             {!isLoading && !user && (
               <Link href="/api/auth/login">
-                <p className="text-slate-200 font-Manrope font-bold hover:text-red">
+                <p className="text-slate-200 font-Manrope font-bold">
                   <a className="p-1.5 ">Sign-in</a>
                 </p>
               </Link>
             )}
             {!isLoading && user && (
               <Link href="/api/auth/logout">
-                <p className="text-white font-Manrope font-bold ">
+                <p className="text-white font-Manrope-bold hover:text-slate-400">
                   <a
                     //onClick={router.push('/dash')}
-                    className=" pointer-events-none p-1 text-black bg-violet-500 hover:bg-violet-600 rounded shadow transition duration-300"
+                    className=" pointer-events-none p-1 text-black bg-violet-500 hover:bg-violet-600 rounded shadow transition duration-300 hover:text-violet-700"
                   >
                     Sign out
                   </a>

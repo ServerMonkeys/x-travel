@@ -129,10 +129,20 @@ export const Dash: NextPage = () => {
             {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
                 <div className="visible ease-in-out duration-200 ">
                     <Notification name={SS_data.first_name + " " + SS_data.last_name} occupation={SS_data.job} imageDMV={DMV_data.photo} imageDOS={DOS_data.photo} dob={SS_data.dob} dl={DMV_data.dl}
-                                  pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num}/>
+                                  pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num} address={DMV_data.street_address + ", " + DMV_data.city + ", " + DMV_data.state + ", " + DMV_data.country + ", " +DMV_data.zip_code}/>
                     <button onClick={() => sendDMVProps()}>Update DMV</button>
                 </div>
             }
+        </div>
+        <div>
+          <motion.button
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: 0.9}}
+            className="save-button"
+            onClick={()=> null}
+            >
+            modal
+          </motion.button>
         </div>
       </div>
   )
