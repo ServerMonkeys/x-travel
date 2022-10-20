@@ -1,7 +1,10 @@
 import React from 'react'
 import {useRouter} from 'next/router'
+<<<<<<< HEAD
 import {motion} from "framer-motion";
 import {clientDOS, updatePerson} from "../../helper/fetchData";
+=======
+>>>>>>> origin/testing
 
 function id() {
     const router = useRouter()
@@ -11,6 +14,7 @@ function id() {
         <h1 className='text-black'>
             {personID}
         </h1>
+<<<<<<< HEAD
         <>
             <div class="py-40 w-full bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex justify-around">
                 <motion.div
@@ -50,6 +54,8 @@ function id() {
             </div>
 
         </>
+=======
+>>>>>>> origin/testing
     </div>
   )
 }
