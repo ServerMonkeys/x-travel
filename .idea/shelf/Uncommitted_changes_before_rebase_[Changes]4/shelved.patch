@@ -1,0 +1,233 @@
+Index: pages/updatedmv/[id].tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\nimport {useRouter} from 'next/router'\nimport Router from 'next/router';\nimport {motion} from \"framer-motion\";\nimport fetchData, {\n    clientDMV,\n    clientDOS,\n    clientSS,\n    fetchDMV_Query,\n    fetchDOS_Query,\n    fetchSS_Query,\n    updatePerson\n} from \"../../helper/fetchData\";\nimport {useState} from 'react';\nimport axios from 'axios';\n\n\nfunction id() {\n    const router = useRouter()\n    const [licenseNum,updateLicense] = useState(\"\");\n    const [newPhoto,updatePhoto] = useState(\"\");\n    const personID = router.query.id\n\n    const handleSubmit = async (event) => {\n        event.preventDefault();\n\n        const teamPayload={\n            licenseNum,\n            newPhoto\n        }\n        console.log(\"Updated DL and Photo\", teamPayload);\n        if(licenseNum.length > 0){\n            updatePerson(clientDMV, personID, 'dl', String(licenseNum));\n        }\n        if(newPhoto.length > 0){\n            updatePerson(clientDMV, personID, 'photo', String(newPhoto));\n        }\n        Router.push({pathname:\"/dash\"});\n\n        /*try {\n            const {data} = await axios({\n                url: \"/api/update\",\n                method: \"POST\",\n                data: teamPayload\n            });\n            console.log(\"response back\", data)\n        }\n        catch(error) {\n            console.log(\"Error\", error);\n\n        }*/\n    }\n\n\n    return (\n    <div>\n        <h1 className='text-black'>\n            {personID}\n        </h1>\n        <>\n            <div class=\"py-40 w-full bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex justify-around\">\n                <motion.div\n                    className={` bg-slate-50 border-gray-200 border-1 flex flex-col w-64 h-64 dark:bg-slate-400 p-2 \n                    shadow-lg\n                    overflow-\n                    gap-1.5\n                    dark:shadow-none\n                    dark:border-b-neutral-50\n                    drop-shadow-xl\n                    justify-center text-center items-center rounded-2xl `}\n                    whileHover={{ scale: 1.02  }}\n\n                >\n                    <div className={`dark:text-slate-400  rounded-xl p-1 w-fit h-fit m-1 select-none cursor-pointer`}>\n                        <h2 className=\"text-blue-500 dark:text-white drop-shadow-md px-4 py-2 font-semibold text-2xl w-full\">\n                            Update DMV\n                        </h2>\n                        <div>\n                            <span class=\"flex justify-left text-gray-500 space-y-8\"> Update Driver's License # </span>\n                            <input class=\"flex justify-around rounded border text-black\" minLength={8}\n                                   maxLength={8}\n                                   type={\"text\"}\n                            value={licenseNum}\n                            onChange={({target}) => updateLicense(target?.value)}></input>\n                        </div>\n                        <div>\n                        <span class=\"flex text-gray-500\"> Update Photo</span>\n                            <input class=\"flex justify-around rounded border text-black\"\n                                   onChange={({target}) => updatePhoto(target?.value)}\n                            ></input>\n                        </div>\n                    </div>\n                    <div>\n                        <button onClick={handleSubmit} className=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded\" >\n                            Save\n                        </button>\n                    </div>\n                </motion.div>\n            </div>\n        </>\n    </div>\n  )\n}\n\nexport default id;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/updatedmv/[id].tsx b/pages/updatedmv/[id].tsx
+--- a/pages/updatedmv/[id].tsx	(revision 272c3de4ed25d431ae6efce6988ee99c33efd7b8)
++++ b/pages/updatedmv/[id].tsx	(date 1666393108300)
+@@ -1,57 +1,12 @@
+ import React from 'react'
+ import {useRouter} from 'next/router'
+-import Router from 'next/router';
+ import {motion} from "framer-motion";
+-import fetchData, {
+-    clientDMV,
+-    clientDOS,
+-    clientSS,
+-    fetchDMV_Query,
+-    fetchDOS_Query,
+-    fetchSS_Query,
+-    updatePerson
+-} from "../../helper/fetchData";
+-import {useState} from 'react';
+-import axios from 'axios';
++import {clientDOS, updatePerson} from "../../helper/fetchData";
+ 
+ 
+ function id() {
+     const router = useRouter()
+-    const [licenseNum,updateLicense] = useState("");
+-    const [newPhoto,updatePhoto] = useState("");
+     const personID = router.query.id
+-
+-    const handleSubmit = async (event) => {
+-        event.preventDefault();
+-
+-        const teamPayload={
+-            licenseNum,
+-            newPhoto
+-        }
+-        console.log("Updated DL and Photo", teamPayload);
+-        if(licenseNum.length > 0){
+-            updatePerson(clientDMV, personID, 'dl', String(licenseNum));
+-        }
+-        if(newPhoto.length > 0){
+-            updatePerson(clientDMV, personID, 'photo', String(newPhoto));
+-        }
+-        Router.push({pathname:"/dash"});
+-
+-        /*try {
+-            const {data} = await axios({
+-                url: "/api/update",
+-                method: "POST",
+-                data: teamPayload
+-            });
+-            console.log("response back", data)
+-        }
+-        catch(error) {
+-            console.log("Error", error);
+-
+-        }*/
+-    }
+-
+-
+     return (
+     <div>
+         <h1 className='text-black'>
+@@ -79,25 +34,24 @@
+                             <span class="flex justify-left text-gray-500 space-y-8"> Update Driver's License # </span>
+                             <input class="flex justify-around rounded border text-black" minLength={8}
+                                    maxLength={8}
+-                                   type={"text"}
+-                            value={licenseNum}
+-                            onChange={({target}) => updateLicense(target?.value)}></input>
++                                   type={"text"}></input>
+                         </div>
+                         <div>
+-                        <span class="flex text-gray-500"> Update Photo</span>
+-                            <input class="flex justify-around rounded border text-black"
+-                                   onChange={({target}) => updatePhoto(target?.value)}
+-                            ></input>
++                        <span className="flex text-gray-500"> Update Photo
++                    </span>
++                            <input className="flex justify-around rounded border"></input>
+                         </div>
+                     </div>
+                     <div>
+-                        <button onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
++                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => updatePerson(clientDOS,DOS_data._id,'passport_exp','01-2030')}>
+                             Save
+                         </button>
+                     </div>
+                 </motion.div>
+             </div>
++
+         </>
++
+     </div>
+   )
+ }
+Index: pages/dash.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import fetchData, {\n  clientDMV,\n  clientDOS,\n  clientSS,\n  fetchDMV_Query,\n  fetchDOS_Query,\n  fetchSS_Query\n} from \"../helper/fetchData\";\n\nimport {SearchForm} from '../components/SearchForm'\nimport {motion} from 'framer-motion'\nimport React, {useEffect, useState} from 'react'\nimport {BaseCard} from '../components/Card/Card'\nimport Notification from '../components/Verified'\nimport verifyData from '../helper/verifyData';\nimport {VerifyCard} from '../components/Card/verifyCard';\nimport Router from 'next/router';\n\n\nexport const Dash: NextPage = () => {\n\n  const [button_press, Press] = useState<boolean>(false);\n  const [SSN, setSSN] = useState<number>()\n  const [SSstatus, setSSStatus] = useState<string>('ready')\n  const [DMVStatus, setDMVStatus] = useState<string>('ready')\n  const [DOSStatus, setDOSStatus] = useState<string>('ready')\n  const [verifyStatus, setVerifyStatus] = useState<string>('Unverified')\n\n  const [DOS_data, setDOS_data] = useState([]);\n  const [SS_data, setSS_data] = useState([]);\n  const [DMV_data, setDMV_data] = useState([]);\n\n  useEffect(() => {\n    if (!SSN) return\n    const fetchMyData = async(): Promise<void> => {\n      const getData = async (client:any, query: any, ssn: number, setState: any, setData:any) => {\n        setState('loading')\n        await Promise.resolve(fetchData(client, query, ssn))\n            .then(data =>{\n              if(data) {\n                setState('fetched')\n                setData(data);\n              }else {\n                setState('error')\n              }\n            })\n      }\n      await Promise.all([\n        getData(clientSS, fetchSS_Query, SSN, setSSStatus, setSS_data),\n        getData(clientDOS, fetchDOS_Query, SSN, setDOSStatus, setDOS_data),\n        getData(clientDMV, fetchDMV_Query, SSN, setDMVStatus, setDMV_data)\n      ])\n    }\n    fetchMyData()\n        .finally(() => {\n          console.log('queried all data');\n          setVerifyStatus('Loading')\n          if (verifyData(SS_data, DOS_data, DMV_data)){\n            setVerifyStatus('Verified')\n          }\n          else\n            setVerifyStatus('Not Matched')\n\n          //console.log(updatePerson(clientDOS,DOS_data._id,'passport_exp','01-2030'));\n        })\n  }, [SSN,button_press])\n\n  console.log(DMV_data)\n\n  function sendDMVProps() {\n    Router.push({\n      pathname: \"/updatedmv/[pid]\",\n      query: {pid: DMV_data._id}\n    })\n  }\n  return (\n      <div className='w-full h-fit content-center bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex flex-col justify-items-start'>\n        <div className=\"relative box-border flex min-h-screen flex-1 flex-col items-center justify-center bg-no-repeat\">\n          <motion.div\n              initial={{opacity:0, scale:1, y:-100}}\n              animate={{ opacity:1, scale:1, y:0}}\n              transition={{ duration:0.75}}\n              className=\"relative grid auto-rows-auto grid-cols-3 gap-10 overflow-visible\"\n          >\n            <BaseCard agencyFullName={'Department of State'} status={DOSStatus} />\n            <BaseCard agencyFullName={'Social Security'} status={SSstatus} />\n            <BaseCard agencyFullName={'Dept Motor Vehicles'} status={DMVStatus} />\n          </motion.div>\n          <SearchForm onChange={(e: any) =>{\n            setSSN(e);\n          }} />\n          <motion.button\n              initial={{opacity:0, scale: 0.5}}\n              animate={{opacity:1, scale:1}}\n              transition={{duration:0.8}}\n              type=\"button\"\n              className=\"inline-flex items-center justify-center w-auto px-2 py-2 space-x-2 text-sm\n                  font-medium text-white bg-blue-700 border border-blue-700 rounded-full\n                  appearance-none cursor-pointer select-none hover:border-blue-800\n                  focus:outline-none focus:ring-2 focus:ring-blue-300  disabled:opacity-75\"\n              whileHover={{\n                scale:1.05\n              }}\n              whileTap={{\n                scale: 0.95,\n                rotate: 660,\n\n                transition: { type: \"spring\", stiffness: 500,  },\n              }}\n              onClick={() => {\n                Press(!button_press)\n              }}\n          >\n            <svg xmlns=\"http://www.w3.org/2000/svg\" className=\"w-5 h-5\" viewBox=\"0 0 20 20\"\n                 fill=\"currentColor\">\n              <path fillRule=\"evenodd\"\n                    d=\"M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z\"\n                    clipRule=\"evenodd\"/>\n            </svg>\n          </motion.button>\n\n          {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&\n              <div className=\"m-5\">\n                <VerifyCard message={'Verification Status'} status={verifyStatus}/>\n              </div>\n          }\n\n          {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&\n              <>\n              <div className=\"visible ease-in-out duration-200 \">\n                <Notification name={SS_data.first_name + \" \" + SS_data.last_name} occupation={SS_data.job} imageDMV={DMV_data.photo} imageDOS={DOS_data.photo} dob={SS_data.dob} dl={DMV_data.dl}\n                              pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num}/>\n              </div>\n              <div>\n              <button className =\"flex justify-between bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded\"onClick={() => sendDMVProps()}>Update DMV</button>\n              </div>\n              </>\n          }\n        </div>\n      </div>\n  )\n}\nexport default Dash
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/dash.tsx b/pages/dash.tsx
+--- a/pages/dash.tsx	(revision 272c3de4ed25d431ae6efce6988ee99c33efd7b8)
++++ b/pages/dash.tsx	(date 1666393105752)
+@@ -1,3 +1,4 @@
++import {NextPage} from 'next'
+ import fetchData, {
+   clientDMV,
+   clientDOS,
+@@ -12,10 +13,6 @@
+ import React, {useEffect, useState} from 'react'
+ import {BaseCard} from '../components/Card/Card'
+ import Notification from '../components/Verified'
+-import verifyData from '../helper/verifyData';
+-import {VerifyCard} from '../components/Card/verifyCard';
+-import Router from 'next/router';
+-
+ 
+ export const Dash: NextPage = () => {
+ 
+@@ -24,7 +21,6 @@
+   const [SSstatus, setSSStatus] = useState<string>('ready')
+   const [DMVStatus, setDMVStatus] = useState<string>('ready')
+   const [DOSStatus, setDOSStatus] = useState<string>('ready')
+-  const [verifyStatus, setVerifyStatus] = useState<string>('Unverified')
+ 
+   const [DOS_data, setDOS_data] = useState([]);
+   const [SS_data, setSS_data] = useState([]);
+@@ -54,25 +50,9 @@
+     fetchMyData()
+         .finally(() => {
+           console.log('queried all data');
+-          setVerifyStatus('Loading')
+-          if (verifyData(SS_data, DOS_data, DMV_data)){
+-            setVerifyStatus('Verified')
+-          }
+-          else
+-            setVerifyStatus('Not Matched')
+-
+-          //console.log(updatePerson(clientDOS,DOS_data._id,'passport_exp','01-2030'));
+         })
+   }, [SSN,button_press])
+-
+-  console.log(DMV_data)
+-
+-  function sendDMVProps() {
+-    Router.push({
+-      pathname: "/updatedmv/[pid]",
+-      query: {pid: DMV_data._id}
+-    })
+-  }
++    //console.log(SS_data)
+   return (
+       <div className='w-full h-fit content-center bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex flex-col justify-items-start'>
+         <div className="relative box-border flex min-h-screen flex-1 flex-col items-center justify-center bg-no-repeat">
+@@ -118,24 +98,12 @@
+                     clipRule="evenodd"/>
+             </svg>
+           </motion.button>
+-
+-          {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
+-              <div className="m-5">
+-                <VerifyCard message={'Verification Status'} status={verifyStatus}/>
+-              </div>
+-          }
+-
+-          {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
+-              <>
+-              <div className="visible ease-in-out duration-200 ">
+-                <Notification name={SS_data.first_name + " " + SS_data.last_name} occupation={SS_data.job} imageDMV={DMV_data.photo} imageDOS={DOS_data.photo} dob={SS_data.dob} dl={DMV_data.dl}
+-                              pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num}/>
+-              </div>
+-              <div>
+-              <button className ="flex justify-between bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"onClick={() => sendDMVProps()}>Update DMV</button>
+-              </div>
+-              </>
+-          }
++            {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
++                <div className="visible ease-in-out duration-200">
++                    <Notification name={SS_data.first_name + " " + SS_data.last_name} occupation={SS_data.job} imageDMV={DMV_data.photo} imageDOS={DOS_data.photo} dob={SS_data.dob} dl={DMV_data.dl}
++                                  pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num}/>
++                </div>
++            }
+         </div>
+       </div>
+   )
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"73852dbb-b7c2-46bb-81e2-38b1672e276c\" name=\"Changes\" comment=\"Testing update\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"Jasjot-test\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2G49iOjsuDwjNM6CWFZ2xD7CJAg\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,\n    &quot;settings.editor.splitter.proportion&quot;: &quot;0.17692852&quot;,\n    &quot;ts.external.directory.path&quot;: &quot;/Users/jasjotsingh/Desktop/x-travel/node_modules/typescript/lib&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/pages/updatedmv\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"dev\" type=\"js.build_tools.npm\" temporary=\"true\" nameIsGenerated=\"true\">\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\n      <command value=\"run\" />\n      <scripts>\n        <script value=\"dev\" />\n      </scripts>\n      <node-interpreter value=\"project\" />\n      <envs />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"npm.dev\" />\n        <item itemvalue=\"npm.dev\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"73852dbb-b7c2-46bb-81e2-38b1672e276c\" name=\"Changes\" comment=\"\" />\n      <created>1665637117404</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1665637117404</updated>\n      <workItem from=\"1665637122580\" duration=\"18778000\" />\n      <workItem from=\"1665689288319\" duration=\"1924000\" />\n      <workItem from=\"1665691416801\" duration=\"5545000\" />\n      <workItem from=\"1665698716025\" duration=\"5553000\" />\n      <workItem from=\"1665713085326\" duration=\"785000\" />\n      <workItem from=\"1665713879849\" duration=\"5200000\" />\n      <workItem from=\"1666051782419\" duration=\"703000\" />\n      <workItem from=\"1666060011655\" duration=\"3511000\" />\n      <workItem from=\"1666069738369\" duration=\"819000\" />\n      <workItem from=\"1666106562553\" duration=\"1299000\" />\n      <workItem from=\"1666216208122\" duration=\"761000\" />\n      <workItem from=\"1666233872985\" duration=\"748000\" />\n      <workItem from=\"1666292390708\" duration=\"4231000\" />\n      <workItem from=\"1666302858715\" duration=\"3986000\" />\n      <workItem from=\"1666308081005\" duration=\"45000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"commmited some changes to to the file\">\n      <created>1665696432739</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1665696432739</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Display card with info from all 3 databases\">\n      <created>1666047081124</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666047081124</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Display card with info from all 3 databases\">\n      <created>1666047133846</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666047133846</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Display card with info from all 3 databases\">\n      <created>1666047924128</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666047924128</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Display card with info from all 3 databases\">\n      <created>1666122442592</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666122442592</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Testing update\">\n      <created>1666308026773</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666308026773</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/testing\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"commmited some changes to to the file\" />\n    <MESSAGE value=\"added a refresh button with state\" />\n    <MESSAGE value=\"Display card with info from all 3 databases\" />\n    <MESSAGE value=\"Testing update\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Testing update\" />\n    <option name=\"OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT\" value=\"true\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 272c3de4ed25d431ae6efce6988ee99c33efd7b8)
++++ b/.idea/workspace.xml	(date 1666393155484)
+@@ -4,7 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Testing update" />
++    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Testing update">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pages/dash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dash.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pages/updatedmv/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/updatedmv/[id].tsx" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -138,7 +142,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1666308026773</updated>
+     </task>
+-    <option name="localTasksCounter" value="7" />
++    <task id="LOCAL-00007" summary="Testing update">
++      <created>1666313911953</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1666313911953</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">

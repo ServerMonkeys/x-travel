@@ -1,57 +1,12 @@
 import React from 'react'
 import {useRouter} from 'next/router'
-import Router from 'next/router';
 import {motion} from "framer-motion";
-import fetchData, {
-    clientDMV,
-    clientDOS,
-    clientSS,
-    fetchDMV_Query,
-    fetchDOS_Query,
-    fetchSS_Query,
-    updatePerson
-} from "../../helper/fetchData";
-import {useState} from 'react';
-import axios from 'axios';
+import {clientDOS, updatePerson} from "../../helper/fetchData";
 
 
 function id() {
     const router = useRouter()
-    const [licenseNum,updateLicense] = useState("");
-    const [newPhoto,updatePhoto] = useState("");
     const personID = router.query.id
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        const teamPayload={
-            licenseNum,
-            newPhoto
-        }
-        console.log("Updated DL and Photo", teamPayload);
-        if(licenseNum.length > 0){
-            updatePerson(clientDMV, personID, 'dl', String(licenseNum));
-        }
-        if(newPhoto.length > 0){
-            updatePerson(clientDMV, personID, 'photo', String(newPhoto));
-        }
-        Router.push({pathname:"/dash"});
-
-        /*try {
-            const {data} = await axios({
-                url: "/api/update",
-                method: "POST",
-                data: teamPayload
-            });
-            console.log("response back", data)
-        }
-        catch(error) {
-            console.log("Error", error);
-
-        }*/
-    }
-
-
     return (
     <div>
         <h1 className='text-black'>
@@ -79,25 +34,24 @@ function id() {
                             <span class="flex justify-left text-gray-500 space-y-8"> Update Driver's License # </span>
                             <input class="flex justify-around rounded border text-black" minLength={8}
                                    maxLength={8}
-                                   type={"text"}
-                            value={licenseNum}
-                            onChange={({target}) => updateLicense(target?.value)}></input>
+                                   type={"text"}></input>
                         </div>
                         <div>
-                        <span class="flex text-gray-500"> Update Photo</span>
-                            <input class="flex justify-around rounded border text-black"
-                                   onChange={({target}) => updatePhoto(target?.value)}
-                            ></input>
+                        <span className="flex text-gray-500"> Update Photo
+                    </span>
+                            <input className="flex justify-around rounded border"></input>
                         </div>
                     </div>
                     <div>
-                        <button onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => updatePerson(clientDOS,DOS_data._id,'passport_exp','01-2030')}>
                             Save
                         </button>
                     </div>
                 </motion.div>
             </div>
+
         </>
+
     </div>
   )
 }
