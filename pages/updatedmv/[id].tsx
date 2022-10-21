@@ -54,9 +54,6 @@ function id() {
 
     return (
     <div>
-        <h1 className='text-black'>
-            {personID}
-        </h1>
         <>
             <div class="py-40 w-full bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex justify-around">
                 <motion.div
