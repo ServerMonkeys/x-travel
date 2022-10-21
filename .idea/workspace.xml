@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Display card with info from all 3 databases">
-      <change afterPath="$PROJECT_DIR$/pages/updatedmv/[id].tsx" afterDir="false" />
+    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Testing update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Avatar/AvatarIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Avatar/AvatarIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper/fetchData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helper/fetchData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dash.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="testing" />
+        <entry key="$PROJECT_DIR$" value="Jasjot-test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,6 +70,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -99,6 +96,7 @@
       <workItem from="1666233872985" duration="748000" />
       <workItem from="1666292390708" duration="4231000" />
       <workItem from="1666302858715" duration="3986000" />
+      <workItem from="1666308081005" duration="45000" />
     </task>
     <task id="LOCAL-00001" summary="commmited some changes to to the file">
       <created>1665696432739</created>
@@ -135,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666122442592</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Testing update">
+      <created>1666308026773</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666308026773</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +173,8 @@
     <MESSAGE value="commmited some changes to to the file" />
     <MESSAGE value="added a refresh button with state" />
     <MESSAGE value="Display card with info from all 3 databases" />
-    <option name="LAST_COMMIT_MESSAGE" value="Display card with info from all 3 databases" />
+    <MESSAGE value="Testing update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing update" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
