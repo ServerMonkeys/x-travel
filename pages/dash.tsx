@@ -73,6 +73,13 @@ export const Dash: NextPage = () => {
       query: {pid: DMV_data._id}
     })
   }
+
+    function sendDOSProps() {
+        Router.push({
+            pathname: "/updatedos/[pid]",
+            query: {pid: DOS_data._id}
+        })
+    }
   return (
       <div className='w-full h-fit content-center bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex flex-col justify-items-start'>
         <div className="relative box-border flex min-h-screen flex-1 flex-col items-center justify-center bg-no-repeat">
@@ -132,8 +139,9 @@ export const Dash: NextPage = () => {
                               pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num}/>
               </div>
               <div>
-              <button className ="flex justify-between bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"onClick={() => sendDMVProps()}>Update DMV</button>
-              </div>
+              <button className =" flex justify-between  py-4  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"onClick={() => sendDMVProps()}>Update DMV</button>
+                  <button className ="flex justify-between py-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"onClick={() => sendDOSProps()}>Update DOS</button>
+                  </div>
               </>
           }
         </div>

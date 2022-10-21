@@ -17,26 +17,30 @@ import axios from 'axios';
 
 function id() {
     const router = useRouter()
-    const [licenseNum,updateLicense] = useState("");
-    const [newPhoto,updatePhoto] = useState("");
+    const [passportNum,updatePassportNum] = useState("");
+    const [passportExp,updatePassportExp] = useState("");
+    const [passportPhoto,updatePassportPhoto] = useState("");
     const personID = router.query.id
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         const teamPayload={
-            licenseNum,
-            newPhoto
+            passportNum,
+            passportExp ,
+            passportPhoto
         }
         console.log("Updated DL and Photo", teamPayload);
-        if(licenseNum.length > 0){
-            updatePerson(clientDMV, personID, 'dl', String(licenseNum));
+        if(passportNum.length > 0){
+            updatePerson(clientDOS, personID, 'passport_num', String(passportNum));
         }
-        if(newPhoto.length > 0){
-            updatePerson(clientDMV, personID, 'photo', String(newPhoto));
+        if(passportExp.length > 0){
+            updatePerson(clientDOS, personID, 'passport_exp', String(passportExp));
         }
-        Router.push({pathname:"/dash"});
-
+         if(passportPhoto.length > 0){
+            updatePerson(clientDOS, personID, 'photo', String(passportPhoto));
+         }
+          Router.push({pathname:"/dash"});
         /*try {
             const {data} = await axios({
                 url: "/api/update",
@@ -73,21 +77,30 @@ function id() {
                 >
                     <div className={`dark:text-slate-400  rounded-xl p-1 w-fit h-fit m-1 select-none cursor-pointer`}>
                         <h2 className="text-blue-500 dark:text-white drop-shadow-md px-4 py-2 font-semibold text-2xl w-full">
-                            Update DMV
+                            Update DOS
                         </h2>
                         <div>
-                            <span class="flex justify-left text-gray-500 space-y-8"> Update Driver's License # </span>
-                            <input class="flex justify-around rounded border text-black" minLength={8}
-                                   maxLength={8}
+                            <span class="flex justify-left text-gray-500 space-y-8"> Update Passport # </span>
+                            <input class="flex justify-around rounded border text-black" minLength={9}
+                                   maxLength={9}
                                    type={"text"}
-                            value={licenseNum}
-                            onChange={({target}) => updateLicense(target?.value)}></input>
+                            value={passportNum}
+                            onChange={({target}) => updatePassportNum(target?.value)}></input>
                         </div>
                         <div>
-                        <span class="flex text-gray-500"> Update Photo</span>
+                        <span class="flex text-gray-500"> Update Passport Expiry Date</span>
                             <input class="flex justify-around rounded border text-black"
-                                   value={newPhoto}
-                                   onChange={({target}) => updatePhoto(target?.value)}
+                                   value={passportExp}
+                                    minLength={8}
+                                    maxLength={8}
+                                   onChange={({target}) => updatePassportExp(target?.value)}
+                            ></input>
+                        </div>
+                        <div>
+                            <span className="flex text-gray-500"> Update Passport Photo</span>
+                            <input className="flex justify-around rounded border text-black"
+                                   value={passportPhoto}
+                                   onChange={({target}) => updatePassportPhoto(target?.value)}
                             ></input>
                         </div>
                     </div>
