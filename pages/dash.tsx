@@ -1,11 +1,11 @@
 import {NextPage} from 'next'
 import fetchData, {
-    clientDMV,
-    clientDOS,
-    clientSS,
-    fetchDMV_Query,
-    fetchDOS_Query,
-    fetchSS_Query
+  clientDMV,
+  clientDOS,
+  clientSS,
+  fetchDMV_Query,
+  fetchDOS_Query,
+  fetchSS_Query
 } from "../helper/fetchData";
 
 import {SearchForm} from '../components/SearchForm'
@@ -13,10 +13,6 @@ import {motion} from 'framer-motion'
 import React, {useEffect, useState} from 'react'
 import {BaseCard} from '../components/Card/Card'
 import Notification from '../components/Verified'
-import verifyData from '../helper/verifyData';
-import {VerifyCard} from '../components/Card/verifyCard';
-import Router from 'next/router';
-
 
 export const Dash: NextPage = () => {
 
@@ -25,7 +21,6 @@ export const Dash: NextPage = () => {
   const [SSstatus, setSSStatus] = useState<string>('ready')
   const [DMVStatus, setDMVStatus] = useState<string>('ready')
   const [DOSStatus, setDOSStatus] = useState<string>('ready')
-  const [verifyStatus, setVerifyStatus] = useState<string>('Unverified')
 
   const [DOS_data, setDOS_data] = useState([]);
   const [SS_data, setSS_data] = useState([]);
@@ -55,25 +50,9 @@ export const Dash: NextPage = () => {
     fetchMyData()
         .finally(() => {
           console.log('queried all data');
-          setVerifyStatus('Loading')
-          if (verifyData(SS_data, DOS_data, DMV_data)){
-            setVerifyStatus('Verified')
-          }
-          else
-            setVerifyStatus('Not Matched')
-
-          //console.log(updatePerson(clientDOS,DOS_data._id,'passport_exp','01-2030'));
         })
   }, [SSN,button_press])
-
-  console.log(DMV_data)
-
-  function sendDMVProps() {
-    Router.push({
-      pathname: "/updatedmv/[pid]",
-      query: {pid: DMV_data._id}
-    })
-  }
+    //console.log(SS_data)
   return (
       <div className='w-full h-fit content-center bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex flex-col justify-items-start'>
         <div className="relative box-border flex min-h-screen flex-1 flex-col items-center justify-center bg-no-repeat">
@@ -119,18 +98,10 @@ export const Dash: NextPage = () => {
                     clipRule="evenodd"/>
             </svg>
           </motion.button>
-
             {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
-                <div className="m-5">
-                    <VerifyCard message={'Verification Status'} status={verifyStatus}/>
-                </div>
-            }
-
-            {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
-                <div className="visible ease-in-out duration-200 ">
+                <div className="visible ease-in-out duration-200">
                     <Notification name={SS_data.first_name + " " + SS_data.last_name} occupation={SS_data.job} imageDMV={DMV_data.photo} imageDOS={DOS_data.photo} dob={SS_data.dob} dl={DMV_data.dl}
                                   pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num}/>
-                    <button onClick={() => sendDMVProps()}>Update DMV</button>
                 </div>
             }
         </div>

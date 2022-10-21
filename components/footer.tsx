@@ -17,7 +17,7 @@ export const Footer = () => {
                 </path>
               </svg>
             </a>
-            <a href="#!" className="mr-6 text-gray-600">
+            <a href="#" className="mr-6 text-gray-600">
               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
                    className="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path fill="currentColor"
