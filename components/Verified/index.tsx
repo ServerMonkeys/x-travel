@@ -36,7 +36,7 @@ export const Notification = (props: NProps) => {
         <div
             className=" text-black text-4xl h-16">
           <div className="text-center">
-            <h4 class="text-transform: capitalize"> {props.name}</h4>
+            <h4 className="text-transform: capitalize"> {props.name}</h4>
           </div>
         </div>
         <h2 className="text-md font-light text-gray-500 font-bold dark:text-gray-400">
@@ -45,7 +45,7 @@ export const Notification = (props: NProps) => {
         <div
             className="px-0.5 py-2 my-4 bg-gradient-to-r bg-gradient-to-r from-fuchsia-800 to-fuchsia-500 flex  items-center rounded  shadow-lg transition-all transform-all hover:scale-105 cursor-pointer relative">
           <div>
-            <div><b class ="font-black">DOB: </b> {props.dob}</div>
+            <div><b className ="font-black">DOB: </b> {props.dob}</div>
           </div>
         </div>
         <div

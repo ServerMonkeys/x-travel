@@ -1,10 +1,10 @@
 import fetchData, {
-  clientDMV,
-  clientDOS,
-  clientSS,
-  fetchDMV_Query,
-  fetchDOS_Query,
-  fetchSS_Query
+    clientDMV,
+    clientDOS,
+    clientSS,
+    fetchDMV_Query,
+    fetchDOS_Query,
+    fetchSS_Query
 } from "../helper/fetchData";
 
 import {SearchForm} from '../components/SearchForm'
@@ -15,9 +15,9 @@ import Notification from '../components/Verified'
 import verifyData from '../helper/verifyData';
 import {VerifyCard} from '../components/Card/verifyCard';
 import Router from 'next/router';
+import {withPageAuthRequired} from "@auth0/nextjs-auth0";
 
-
-export const Dash: NextPage = () => {
+export const Dash = () => {
 
   const [button_press, Press] = useState<boolean>(false);
   const [SSN, setSSN] = useState<number>()
@@ -148,4 +148,6 @@ export const Dash: NextPage = () => {
       </div>
   )
 }
-export default Dash
+
+export default Dash;
+export const getServerSideProps = withPageAuthRequired()
