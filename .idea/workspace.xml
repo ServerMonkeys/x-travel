@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Update with DMV upload">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/updatedos/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/updatedos/[id].tsx" afterDir="false" />
-    </list>
+    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Update with DMV and DOS upload" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666834653625</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update with DMV and DOS upload">
+      <created>1666836189873</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666836189873</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +222,8 @@
     <MESSAGE value="Display card with info from all 3 databases" />
     <MESSAGE value="Testing update" />
     <MESSAGE value="Update with DMV upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update with DMV upload" />
+    <MESSAGE value="Update with DMV and DOS upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update with DMV and DOS upload" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
