@@ -1,0 +1,261 @@
+Index: pages/updatedos/[id].tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useState} from 'react'\nimport Router, {useRouter} from 'next/router'\nimport {motion} from \"framer-motion\";\nimport {clientDOS, updatePerson} from \"../../helper/fetchData\";\n\n\nfunction id() {\n    const router = useRouter()\n    const [passportNum,updatePassportNum] = useState(\"\");\n    const [passportExp,updatePassportExp] = useState(\"\");\n    const [passportPhoto,updatePassportPhoto] = useState(\"\");\n    const personID = router.query.id\n\n    const handleSubmit = async (event:any) => {\n        event.preventDefault();\n\n        const teamPayload={\n            passportNum,\n            passportExp ,\n            passportPhoto\n        }\n        console.log(\"Updated DL and Photo\", teamPayload);\n        if(passportNum.length > 0){\n            await updatePerson(clientDOS, String(personID), 'passport_num', String(passportNum));\n        }\n        if(passportExp.length > 0){\n            await updatePerson(clientDOS, String(personID), 'passport_exp', String(passportExp));\n        }\n        if(passportPhoto.length > 0){\n            await updatePerson(clientDOS, String(personID), 'photo', String(passportPhoto));\n        }\n        await Router.push({pathname:\"/dash\"});\n        /*try {\n            const {data} = await axios({\n                url: \"/api/update\",\n                method: \"POST\",\n                data: teamPayload\n            });\n            console.log(\"response back\", data)\n        }\n        catch(error) {\n            console.log(\"Error\", error);\n\n        }*/\n    }\n\n\n    return (\n    <div>\n        <>\n            <div className=\"py-40 w-full bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex justify-around\">\n                <motion.div\n                    className={` bg-slate-50 border-gray-200 border-1 flex flex-col w-64 h-64 dark:bg-slate-400 p-2 \n                    shadow-lg\n                    overflow-\n                    gap-1.5\n                    dark:shadow-none\n                    dark:border-b-neutral-50\n                    drop-shadow-xl\n                    justify-center text-center items-center rounded-2xl `}\n\n                >\n                    <div className={`dark:text-slate-400  rounded-xl p-1 w-fit h-fit m-1 select-none cursor-pointer flex flex-col justify-center items-center`}>\n                        <h2 className=\"text-blue-500 dark:text-white drop-shadow-md px-4 py-2 font-semibold text-2xl w-full\">\n                            Update DOS\n                        </h2>\n                        <div>\n                            <span className=\"text-gray-500 space-y-8\"> Update Passport # </span>\n                            <input className=\"rounded border text-black\" minLength={9}\n                                   maxLength={9}\n                            value={passportNum}\n                            onChange={({target}) => updatePassportNum(target?.value)}></input>\n                        </div>\n                        <div>\n                        <span className=\"flex text-gray-500\"> Update Passport Expiry Date</span>\n                            <input className=\"rounded border text-black\"\n                                   value={passportExp}\n                                    minLength={8}\n                                    maxLength={8}\n                                   onChange={({target}) => updatePassportExp(target?.value)}\n                            ></input>\n                        </div>\n                        <div>\n                            <span className=\"flex text-gray-500\"> Update Passport Photo</span>\n                            <input className=\"rounded border text-black\"\n                                   value={passportPhoto}\n                                   onChange={({target}) => updatePassportPhoto(target?.value)}\n                            ></input>\n                        </div>\n                    </div>\n                    <div>\n                        <button onClick={handleSubmit} className=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded\" >\n                            Save\n                        </button>\n                    </div>\n                </motion.div>\n            </div>\n        </>\n    </div>\n  )\n}\n\nexport default id;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/updatedos/[id].tsx b/pages/updatedos/[id].tsx
+--- a/pages/updatedos/[id].tsx	(revision aebd4099f00b700b23ebd877937e04110d1b6488)
++++ b/pages/updatedos/[id].tsx	(date 1666833948202)
+@@ -30,18 +30,6 @@
+             await updatePerson(clientDOS, String(personID), 'photo', String(passportPhoto));
+         }
+         await Router.push({pathname:"/dash"});
+-        /*try {
+-            const {data} = await axios({
+-                url: "/api/update",
+-                method: "POST",
+-                data: teamPayload
+-            });
+-            console.log("response back", data)
+-        }
+-        catch(error) {
+-            console.log("Error", error);
+-
+-        }*/
+     }
+ 
+ 
+Index: components/Verified/ticket.tsx
+===================================================================
+diff --git a/components/Verified/ticket.tsx b/components/Verified/ticket.tsx
+deleted file mode 100644
+--- a/components/Verified/ticket.tsx	(revision aebd4099f00b700b23ebd877937e04110d1b6488)
++++ /dev/null	(revision aebd4099f00b700b23ebd877937e04110d1b6488)
+@@ -1,149 +0,0 @@
+-import React from "react";
+-
+-type NProps = {
+-    name?: string;
+-    occupation?: string;
+-    imageDMV?: string;
+-    imageDOS?: string;
+-    dob?: string;
+-    dl?: string;
+-    pass_num?: string;
+-    pass_exp?: string;
+-    address?: string;
+-    phone_num?: string;
+-};
+-
+-// @ts-ignore
+-export default function Ticket (props: NProps){
+-    return (
+-        <>
+-        <style>
+-            .barcode {
+-            left: 50%;
+-            box-shadow: 1px 0 0 1px, 5px 0 0 1px, 10px 0 0 1px, 11px 0 0 1px, 15px 0 0 1px, 18px 0 0 1px, 22px 0 0 1px, 23px 0 0 1px, 26px 0 0 1px, 30px 0 0 1px, 35px 0 0 1px, 37px 0 0 1px, 41px 0 0 1px, 44px 0 0 1px, 47px 0 0 1px, 51px 0 0 1px, 56px 0 0 1px, 59px 0 0 1px, 64px 0 0 1px, 68px 0 0 1px, 72px 0 0 1px, 74px 0 0 1px, 77px 0 0 1px, 81px 0 0 1px, 85px 0 0 1px, 88px 0 0 1px, 92px 0 0 1px, 95px 0 0 1px, 96px 0 0 1px, 97px 0 0 1px, 101px 0 0 1px, 105px 0 0 1px, 109px 0 0 1px, 110px 0 0 1px, 113px 0 0 1px, 116px 0 0 1px, 120px 0 0 1px, 123px 0 0 1px, 127px 0 0 1px, 130px 0 0 1px, 131px 0 0 1px, 134px 0 0 1px, 135px 0 0 1px, 138px 0 0 1px, 141px 0 0 1px, 144px 0 0 1px, 147px 0 0 1px, 148px 0 0 1px, 151px 0 0 1px, 155px 0 0 1px, 158px 0 0 1px, 162px 0 0 1px, 165px 0 0 1px, 168px 0 0 1px, 173px 0 0 1px, 176px 0 0 1px, 177px 0 0 1px, 180px 0 0 1px;
+-            display: inline-block;
+-            transform: translateX(-90px);
+-        }
+-        </style>
+-        <div class="flex flex-col items-center justify-center min-h-screen bg-center bg-cover"
+-             style="background-image: url(https://images.unsplash.com/photo-1519666336592-e225a99dcd2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1888&q=80);">
+-            <div class="absolute bg-blue-900 opacity-80 inset-0 z-0"></div>
+-            <div class="max-w-md w-full h-full mx-auto z-10 bg-blue-900 rounded-3xl">
+-                <div class="flex flex-col">
+-                    <div class="bg-white relative drop-shadow-2xl  rounded-3xl p-4 m-4">
+-                        <div class="flex-none sm:flex">
+-                            <div class=" relative h-32 w-32   sm:mb-0 mb-3 hidden">
+-                                <img src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg" alt="aji" class=" w-32 h-32 object-cover rounded-2xl">
+-                                    <a href="#"
+-                                       class="absolute -right-2 bottom-2   -ml-3  text-white p-1 text-xs bg-green-400 hover:bg-green-500 font-medium tracking-wider rounded-full transition ease-in duration-300">
+-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+-                                             class="h-4 w-4">
+-                                            <path
+-                                                d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
+-                                            </path>
+-                                        </svg>
+-                                    </a>
+-                            </div>
+-                            <div class="flex-auto justify-evenly">
+-                                <div class="flex items-center justify-between">
+-                                    <div class="flex items-center  my-1">
+-								<span class="mr-3 rounded-full bg-white w-8 h-8">
+-    <img src="https://image.winudf.com/v2/image1/Y29tLmJldHMuYWlyaW5kaWEudWlfaWNvbl8xNTU0NTM4MzcxXzA0Mw/icon.png?w=&amp;fakeurl=1" class="h-8 p-1">
+-</span>
+-                                        <h2 class="font-medium">Airindia</h2>
+-                                    </div>
+-                                    <div class="ml-auto text-blue-800">A380</div>
+-                                </div>
+-                                <div class="border-b border-dashed border-b-2 my-5"></div>
+-                                <div class="flex items-center">
+-                                    <div class="flex flex-col">
+-                                        <div class="flex-auto text-xs text-gray-400 my-1">
+-                                            <span class="mr-1 ">MO</span><span>19 22</span>
+-                                        </div>
+-                                        <div class="w-full flex-none text-lg text-blue-800 font-bold leading-none">COK</div>
+-                                        <div class="text-xs">Cochi</div>
+-
+-                                    </div>
+-                                    <div class="flex flex-col mx-auto">
+-                                        <img src="https://image.winudf.com/v2/image1/Y29tLmJldHMuYWlyaW5kaWEudWlfaWNvbl8xNTU0NTM4MzcxXzA0Mw/icon.png?w=&amp;fakeurl=1" class="w-20 p-1">
+-
+-                                    </div>
+-                                    <div class="flex flex-col ">
+-                                        <div class="flex-auto text-xs text-gray-400 my-1">
+-                                            <span class="mr-1">MO</span><span>19 22</span>
+-                                        </div>
+-                                        <div class="w-full flex-none text-lg text-blue-800 font-bold leading-none">DXB</div>
+-                                        <div class="text-xs">Dubai</div>
+-
+-                                    </div>
+-                                </div>
+-                                <div class="border-b border-dashed border-b-2 my-5 pt-5">
+-                                    <div class="absolute rounded-full w-5 h-5 bg-blue-900 -mt-2 -left-2"></div>
+-                                    <div class="absolute rounded-full w-5 h-5 bg-blue-900 -mt-2 -right-2"></div>
+-                                </div>
+-                                <div class="flex items-center mb-5 p-5 text-sm">
+-                                    <div class="flex flex-col">
+-                                        <span class="text-sm">Flight</span>
+-                                        <div class="font-semibold">Airbus380</div>
+-
+-                                    </div>
+-                                    <div class="flex flex-col ml-auto">
+-                                        <span class="text-sm">Gate</span>
+-                                        <div class="font-semibold">B3</div>
+-
+-                                    </div>
+-                                </div>
+-                                <div class="flex items-center mb-4 px-5">
+-                                    <div class="flex flex-col text-sm">
+-                                        <span class="">Board</span>
+-                                        <div class="font-semibold">11:50AM</div>
+-
+-                                    </div>
+-                                    <div class="flex flex-col mx-auto text-sm">
+-                                        <span class="">Departs</span>
+-                                        <div class="font-semibold">11:30Am</div>
+-
+-                                    </div>
+-                                    <div class="flex flex-col text-sm">
+-                                        <span class="">Arrived</span>
+-                                        <div class="font-semibold">2:00PM</div>
+-
+-                                    </div>
+-                                </div>
+-                                <div class="border-b border-dashed border-b-2 my-5 pt-5">
+-                                    <div class="absolute rounded-full w-5 h-5 bg-blue-900 -mt-2 -left-2"></div>
+-                                    <div class="absolute rounded-full w-5 h-5 bg-blue-900 -mt-2 -right-2"></div>
+-                                </div>
+-                                <div class="flex items-center px-5 pt-3 text-sm">
+-                                    <div class="flex flex-col">
+-                                        <span class="">Passanger</span>
+-                                        <div class="font-semibold">Ajimon</div>
+-
+-                                    </div>
+-                                    <div class="flex flex-col mx-auto">
+-                                        <span class="">Class</span>
+-                                        <div class="font-semibold">Economic</div>
+-
+-                                    </div>
+-                                    <div class="flex flex-col">
+-                                        <span class="">Seat</span>
+-                                        <div class="font-semibold">12 E</div>
+-
+-                                    </div>
+-                                </div>
+-                                <div class="flex flex-col py-5  justify-center text-sm ">
+-                                    <h6 class="font-bold text-center">Boarding Pass</h6>
+-
+-                                    <div class="barcode h-14 w-0 inline-block mt-4 relative left-auto"></div>
+-                                </div>
+-                            </div>
+-                        </div>
+-                    </div>
+-                </div>
+-            </div>
+-        </div>
+-        </div>
+-    </>
+-    );
+-};
+-
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"73852dbb-b7c2-46bb-81e2-38b1672e276c\" name=\"Changes\" comment=\"Testing update\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"Sparsh\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2G49iOjsuDwjNM6CWFZ2xD7CJAg\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,\n    &quot;settings.editor.splitter.proportion&quot;: &quot;0.17692852&quot;,\n    &quot;ts.external.directory.path&quot;: &quot;/Users/jasjotsingh/Desktop/x-travel/node_modules/typescript/lib&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/pages/updatedmv\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"dev\" type=\"js.build_tools.npm\" temporary=\"true\" nameIsGenerated=\"true\">\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\n      <command value=\"run\" />\n      <scripts>\n        <script value=\"dev\" />\n      </scripts>\n      <node-interpreter value=\"project\" />\n      <envs />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"npm.dev\" />\n        <item itemvalue=\"npm.dev\" />\n        <item itemvalue=\"npm.dev\" />\n        <item itemvalue=\"npm.dev\" />\n        <item itemvalue=\"npm.dev\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"73852dbb-b7c2-46bb-81e2-38b1672e276c\" name=\"Changes\" comment=\"\" />\n      <created>1665637117404</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1665637117404</updated>\n      <workItem from=\"1665637122580\" duration=\"18778000\" />\n      <workItem from=\"1665689288319\" duration=\"1924000\" />\n      <workItem from=\"1665691416801\" duration=\"5545000\" />\n      <workItem from=\"1665698716025\" duration=\"5553000\" />\n      <workItem from=\"1665713085326\" duration=\"785000\" />\n      <workItem from=\"1665713879849\" duration=\"5200000\" />\n      <workItem from=\"1666051782419\" duration=\"703000\" />\n      <workItem from=\"1666060011655\" duration=\"3511000\" />\n      <workItem from=\"1666069738369\" duration=\"819000\" />\n      <workItem from=\"1666106562553\" duration=\"1299000\" />\n      <workItem from=\"1666216208122\" duration=\"761000\" />\n      <workItem from=\"1666233872985\" duration=\"748000\" />\n      <workItem from=\"1666292390708\" duration=\"4231000\" />\n      <workItem from=\"1666302858715\" duration=\"3986000\" />\n      <workItem from=\"1666308081005\" duration=\"45000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"commmited some changes to to the file\">\n      <created>1665696432739</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1665696432739</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Display card with info from all 3 databases\">\n      <created>1666047081124</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666047081124</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Display card with info from all 3 databases\">\n      <created>1666047133846</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666047133846</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Display card with info from all 3 databases\">\n      <created>1666047924128</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666047924128</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Display card with info from all 3 databases\">\n      <created>1666122442592</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666122442592</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Testing update\">\n      <created>1666308026773</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666308026773</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Testing update\">\n      <created>1666313911953</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666313911953</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"8\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/testing\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"commmited some changes to to the file\" />\n    <MESSAGE value=\"added a refresh button with state\" />\n    <MESSAGE value=\"Display card with info from all 3 databases\" />\n    <MESSAGE value=\"Testing update\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Testing update\" />\n    <option name=\"OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT\" value=\"true\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision aebd4099f00b700b23ebd877937e04110d1b6488)
++++ b/.idea/workspace.xml	(date 1666834011728)
+@@ -4,12 +4,21 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Testing update" />
++    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Testing update">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="Git.Pull.Settings">
++    <option name="OPTIONS">
++      <set>
++        <option value="REBASE" />
++      </set>
++    </option>
++  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+@@ -43,7 +52,7 @@
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+     &quot;settings.editor.splitter.proportion&quot;: &quot;0.17692852&quot;,
+     &quot;ts.external.directory.path&quot;: &quot;/Users/jasjotsingh/Desktop/x-travel/node_modules/typescript/lib&quot;,
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+@@ -98,6 +107,17 @@
+       <workItem from="1666292390708" duration="4231000" />
+       <workItem from="1666302858715" duration="3986000" />
+       <workItem from="1666308081005" duration="45000" />
++      <workItem from="1666394763520" duration="11000" />
++      <workItem from="1666403046902" duration="4920000" />
++      <workItem from="1666472523372" duration="2985000" />
++      <workItem from="1666475844869" duration="207000" />
++      <workItem from="1666568301684" duration="3593000" />
++      <workItem from="1666586364354" duration="105000" />
++      <workItem from="1666586640240" duration="3657000" />
++      <workItem from="1666733409971" duration="214000" />
++      <workItem from="1666733627513" duration="58000" />
++      <workItem from="1666733687530" duration="121000" />
++      <workItem from="1666733810875" duration="528000" />
+     </task>
+     <task id="LOCAL-00001" summary="commmited some changes to to the file">
+       <created>1665696432739</created>
+@@ -148,7 +168,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1666313911953</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="Testing update">
++      <created>1666394341362</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1666394341362</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
