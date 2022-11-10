@@ -5,28 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="changed the lighting to the world model and made added some animations">
-      <change afterPath="$PROJECT_DIR$/components/Card/InfoBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/info.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/ThumbsUP.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/x-travel-beta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/x-travel-beta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Avatar/AvatarIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Avatar/AvatarIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Avatar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Avatar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Card/demoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/demoCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Card/verifyCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/verifyCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SearchForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Verified/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Verified/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/threejs/world.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/threejs/world.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/dash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dash.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/updatedmv/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/updatedmv/[id].tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +132,11 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="78f9ac7e-20b1-4da3-9f5f-8c757eb7eef3">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>

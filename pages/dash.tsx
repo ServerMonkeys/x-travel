@@ -14,6 +14,7 @@ import React, {useEffect, useState} from 'react'
 import {BaseCard} from '../components/Card/Card'
 import Notification from '../components/Verified'
 import verifyData from '../helper/verifyData';
+import Router from "next/router";
 
 export const Dash: NextPage = () => {
 
@@ -60,9 +61,21 @@ export const Dash: NextPage = () => {
         })
   }, [SSN,button_press])
 
-  console.log(SS_data)
   // @ts-ignore
     // @ts-ignore
+    function sendDMVProps() {
+        Router.push({
+            pathname: "/updatedmv/[pid]",
+            query: {pid: DMV_data._id}
+        })
+    }
+
+    function sendDOSProps() {
+        Router.push({
+            pathname: "/updatedos/[pid]",
+            query: {pid: DOS_data._id}
+        })
+    }
     return (
       <div className='w-full h-fit py-4 content-center bg-gradient-to-r from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex flex-col justify-items-start'>
         <div className="relative box-border flex min-h-screen py-8 flex-1 flex-col items-center justify-center bg-no-repeat">
@@ -94,13 +107,20 @@ export const Dash: NextPage = () => {
             </div>
 
             {SSstatus === 'fetched' && DMVStatus === 'fetched' && DOSStatus === 'fetched' &&
+                <>
                 <motion.div className="visible "
                             initial={{opacity:0, scale:1}}
                             animate={{ opacity:1, scale:1}}
                             transition={{ duration:0.5 ,delay: 0.8}}>
                     <Notification name={SS_data.first_name + " " + SS_data.last_name} occupation={SS_data.job} imageDMV={DMV_data.photo} imageDOS={DOS_data.photo} dob={SS_data.dob} dl={DMV_data.dl}
                                   pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num} status={verifyStatus} address={DMV_data.street_address + ", " + DMV_data.city + ", " + DMV_data.state + ", " + DMV_data.country + ", " +DMV_data.zip_code} phone_num={DMV_data.phone_num}/>
+
                 </motion.div>
+                    <div>
+                        <button className =" flex justify-between  py-4  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => sendDMVProps()}>Update DMV</button>
+                        <button className ="flex justify-between py-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => sendDOSProps()}>Update DOS</button>
+                    </div>
+                </>
             }
         </div>
       </div>

@@ -4,9 +4,9 @@ import {motion} from "framer-motion";
 import {clientDMV, updatePerson} from "../../helper/fetchData";
 
 
-function id() {
+function Id() {
     const router = useRouter()
-    const [licenseNum,updateLicense] = useState("");
+    const [licenseNum, updateLicense] = useState("");
     const [newPhoto,updatePhoto] = useState("");
     const personID = router.query.id
 
@@ -14,7 +14,7 @@ function id() {
     const [uploadData, setUploadData] = useState();
 
 
-    function handleOnChange(changeEvent) {
+    function handleOnChange(changeEvent:any) {
         const reader = new FileReader();
 
         reader.onload = function(onLoadEvent) {
@@ -120,4 +120,4 @@ function id() {
   )
 }
 
-export default id;
+export default Id;
