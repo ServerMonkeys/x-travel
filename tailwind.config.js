@@ -14,11 +14,14 @@ module.exports = {
       }
     },
     extend: {
+      dropShadow:{
+        "basic-drop": "4px 4px 4px rgba(0, 0, 0, 0.6)",
+      },
       backgroundImage: {
         xlogo: "url('../public/assets/SimpleXLogo.svg')",
         'hero-banner': "url('../public/assets/PhoneHero.png')",
         'pattern-svg': "url('../public/assets/SpiralSvg.svg')",
-        'line-svg': "url('../public/assets/lineDash.svg')",
+        'white-pattern-svg': "url('../public/assets/WhitePattern.svg')",
         'protocol-x': "url('../public/assets/ProtocolX2.svg')",
         wave: "url('../public/assets/waves.svg')"
       },

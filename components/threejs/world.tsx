@@ -8,7 +8,7 @@ export const WorldView = () => {
   return (
     <motion.div className={` h-800 w-full  bg-black relative`}>
       <Canvas>
-        <Stars fade factor={12} speed={1} saturation={1020} count={10000} />
+        <Stars fade factor={12} speed={1.2} saturation={2000} count={10000} />
       </Canvas>
 
       <motion.div

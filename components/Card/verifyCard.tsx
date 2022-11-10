@@ -46,10 +46,12 @@ export const VerifyCard: React.FC<CardProps> = props => {
         ${shadowColor}
         ${loadState}
         justify-center text-center items-center rounded-2xl `}
-      whileHover={{ scale: 1.1 }}
 
+      initial={{opacity:0, scale:1}}
+      animate={{ opacity:1, scale:1}}
+      transition={{ duration:0.5 ,delay: 0.8}}
+      whileHover={{ scale: 1.02 }}
     >
-    
       <h2 className="text-black dark:text-white drop-shadow-md  font-semibold text-2xl w-full">
         {props.message}
       </h2>
