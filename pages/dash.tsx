@@ -116,10 +116,13 @@ export const Dash: NextPage = () => {
                                   pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num} status={verifyStatus} address={DMV_data.street_address + ", " + DMV_data.city + ", " + DMV_data.state + ", " + DMV_data.country + ", " +DMV_data.zip_code} phone_num={DMV_data.phone_num}/>
 
                 </motion.div>
-                    <div>
-                        <button className =" flex justify-between  py-4  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => sendDMVProps()}>Update DMV</button>
-                        <button className ="flex justify-between py-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => sendDOSProps()}>Update DOS</button>
-                    </div>
+                    <motion.div className={'flex flex-row gap-1 justify-center mt-8 font-Manrope'}
+                                initial={{opacity:0, scale:1, y:-100}} animate={{ opacity:1, scale:1, y:0}} transition={{ delay: 3.5, duration:0.75}}
+
+                    >
+                        <button className =" flex justify-between  py-2  bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={() => sendDMVProps()}>Update DMV</button>
+                        <button className ="flex justify-between py-2 bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded" onClick={() => sendDOSProps()}>Update DOS</button>
+                    </motion.div>
                 </>
             }
         </div>

@@ -23,7 +23,8 @@ module.exports = {
         'pattern-svg': "url('../public/assets/SpiralSvg.svg')",
         'white-pattern-svg': "url('../public/assets/WhitePattern.svg')",
         'protocol-x': "url('../public/assets/ProtocolX2.svg')",
-        wave: "url('../public/assets/waves.svg')"
+        wave: "url('../public/assets/waves.svg')",
+        haiki: "url('../public/assets/blob-scene-haikei.svg')"
       },
       colors: {
 

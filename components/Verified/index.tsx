@@ -5,9 +5,6 @@ import {motion} from 'framer-motion'
 import {div} from "three/examples/jsm/nodes/shadernode/ShaderNodeBaseElements";
 import InfoPop from "../info";
 
-//const imgurl =
-  //"https://www.csus.edu/university-advancement/university-foundation/meet-us/_internal/photos/robert-nelsen.jpg";
-
 type NProps = {
   name?: string;
   occupation?: string;
