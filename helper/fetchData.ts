@@ -102,9 +102,9 @@ export const updatePerson_mutation = (id:string, entity_type:any, value:any): st
 `
 }
 
-export const addSS_mutation = (ssn:number, fname:string, lname:string, dob:string, street:string, city:string,
+export const addSS = (ssn:number, fname:string, lname:string, dob:string, street:string, city:string,
                                state:string, zip:string, country:string, job:string) => {
-    return `mutation addPerson {
+    return clientSS.request(`mutation addPerson {
     add_Person(
       input: {ssn:${ssn},
       first_name:"${fname}", 
@@ -134,11 +134,12 @@ export const addSS_mutation = (ssn:number, fname:string, lname:string, dob:strin
       }
     }
   }`
+    )
 }
 
-export const addDMV_mutation = (ssn:number, fname:string, lname:string, dob:string, dl:string, phone:string, street:string,
+export const addDMV = (ssn:number, fname:string, lname:string, dob:string, dl:string, phone:string, street:string,
                                 city:string, state:string, zip:string, country:string, photo:string) => {
-    return `mutation addPerson {
+    return clientDMV.request(`mutation addPerson {
     add_Person(
       input: {ssn:${ssn},
       first_name:"${fname}", 
@@ -172,11 +173,12 @@ export const addDMV_mutation = (ssn:number, fname:string, lname:string, dob:stri
       }
     }
   }`
+    )
 }
 
-export const addDOS_mutation = (ssn:number, fname:string, lname:string, dob:string, pass_num:string, pass_exp:string, phone:string,
+export const addDOS = (ssn:number, fname:string, lname:string, dob:string, pass_num:string, pass_exp:string, phone:string,
                                 street:string, city:string, state:string, zip:string, country:string, photo:string) => {
-    return `mutation addPerson {
+    return clientDOS.request(`mutation addPerson {
     add_Person(
       input: {ssn:${ssn},
       first_name:"${fname}", 
@@ -210,6 +212,7 @@ export const addDOS_mutation = (ssn:number, fname:string, lname:string, dob:stri
       }
     }
   }`
+    )
 }
 
 export const fetchData = async (client: { request: (arg0: any) => any }, func: (arg0: number) => any, ssn_number: number) => {
@@ -234,6 +237,8 @@ export const fetchData = async (client: { request: (arg0: any) => any }, func: (
 export const updatePerson = async (client:any, id:string, entity_type:any, value:any) => {
     client.request(updatePerson_mutation(id, entity_type, value))
 }
+
+
 
 export default fetchData;
 
