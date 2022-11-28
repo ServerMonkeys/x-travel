@@ -129,10 +129,16 @@ function Id() {
                                         </svg>
                                         <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
                                             className="font-semibold">Click to upload</span> or drag and drop</p>
-                                        <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF
-                                            (MAX. 800x400px)</p>
+
                                     </div>
-                                    <input id="dropzone-file" type="file" className="hidden"/>
+                                    <form method="post" onChange={handleOnChange} onSubmit={handleOnSubmit}>
+                                        <input id="dropzone-file" type="file" name="file" accept="image/*" className="hidden"/>
+                                        {imageSrc && !uploadData && (
+                                            <div>
+                                                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Upload Files</button>
+                                            </div>
+                                        )}
+                                    </form>
                                 </label>
                             </div>
                         </div>
