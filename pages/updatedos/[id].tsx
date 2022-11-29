@@ -75,11 +75,10 @@ function Id() {
 
     return (
     <div>
-            <div className="py-40 w-full bg-gradient-to-br from-stop1 to-stop2 to-stop3 bg-no-repeat bg-bottom flex justify-around ">
+            <div className="py-40 w-full bg-gradient-to-br from-stop1 to-stop2 bg-no-repeat bg-bottom flex justify-center items-center h-screen ">
                 <motion.div
                     className={` border-gray-200  flex flex-col w-64 h-64 dark:bg-slate-400 p-2 
-                    
-                    
+                    my-14
                     gap-1.5
                     min-h-fit
                     min-w-fit
@@ -91,21 +90,21 @@ function Id() {
                 >
                     <div className={`dark:text-slate-20 dark:bg-black bg-neutral-50/90 pb-8  rounded-t-xl p-1 w-fit w-96 px-10 h-fit  select-none cursor-pointer flex flex-col gap-2 justify-center items-center`}>
                         <div className='font-Manrope flex flex-col justify-center items-center  m-2 p-2 px-4 rounded-xl'>
-                            <h2 className={'text-2xl font-semibold text-neutral-500 z-10 '}>Department of State</h2>
+                            <h2 className={'text-4xl font-semibold text-neutral-500 z-10 '}>Department of State</h2>
                             <div className={"w-full flex justify-end items-center"}>
                                 <div className="w-full h-1 bg-blue-300 rounded-full mb-2.5 mr-1"></div>
-                                <h3 className='text-xl font-semibold -mt-3 text-blue-400 p-1 rounded-xl'><i>Update</i></h3>
+                                <h3 className='text-2xl font-semibold -mt-3 text-blue-400 p-1 rounded-xl'><i>Update</i></h3>
                             </div>
 
                         </div>
-                            <h2 className="text-neutral-700 space-y-8"> <span className='font-semibold text-green-400'>new</span>  Passport ID 🪪 </h2>
+                            <h2 className="text-neutral-700 space-y-8 text-xl"> <span className='font-semibold text-green-400'>new</span>  Passport ID 🪪 </h2>
                             <motion.input className="rounded border text-black text-center font-semibold rounded-lg" minLength={9}
                                    maxLength={9}
                             value={passportNum}
                                           whileTap={{scale:0.9}}
                             onChange={({target}) => updatePassportNum(target?.value)}></motion.input>
                         <div>
-                        <h2 className=" text-neutral-700 mb-2"> <span className="font-semibold text-green-400">new </span>Expiry Date 📅</h2>
+                        <h2 className=" text-neutral-700 mb-2 text-xl"> <span className="font-semibold text-green-400">new </span>Expiry Date 📅</h2>
                             <motion.input className="rounded border text-black text-center font-semibold py-0.5 rounded-lg"
                                           value={passportExp}
                                           placeholder={''}
@@ -116,7 +115,7 @@ function Id() {
                             />
                         </div>
                         <div className={"flex flex-col justify-center text-center items-center"}>
-                            <h2 className="text-neutral-700 mt-6 mb-2">Update Passport Photo</h2>
+                            <h2 className="text-neutral-700 mt-6 mb-2 text-xl">Update Passport Photo</h2>
                             <div className=" mt-2 flex justify-center items-center w-full">
                                 <label htmlFor="dropzone-file"
                                        className="flex flex-col justify-center items-center w-full h-64 bg-neutral-100/40 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">

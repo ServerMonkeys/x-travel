@@ -22,7 +22,10 @@ function SSadd() {
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <div className={" bg-gradient-to-br from-stop1 to-stop2"}>
+        <div className=" h-screen flex flex-col items-center justify-start">
+            <h1 className={"text-neutral-800 font-Manrope text-4xl font-light mt-14"}>Social Security Information</h1>
+        <form className={"w-5/6 m-24 mt-16 mx-48 bg-yellow-50/80 p-8 rounded-xl "} onSubmit={handleSubmit}>
             <div className="relative z-0 mb-6 w-full group">
                 <input type="text" name="ssn" id="ssn"
                        className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -146,6 +149,8 @@ function SSadd() {
                 </motion.button>
             </div>
         </form>
+        </div>
+        </div>
 
     )
 }
