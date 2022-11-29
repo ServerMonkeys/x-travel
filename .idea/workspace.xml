@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Added add page for SS">
+    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Display card with info from all 3 databases">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_22,_1_04_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_22__1_04_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SearchForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Verified/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Verified/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dash.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/updatedos/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/updatedos/[id].tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +50,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
     &quot;settings.editor.splitter.proportion&quot;: &quot;0.17692852&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/jasjotsingh/Desktop/x-travel/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/christianleyvamendez/Documents/Programming/School/131/x-travel-beta/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -107,10 +112,8 @@
       <workItem from="1666923167934" duration="81000" />
       <workItem from="1667003518710" duration="2941000" />
       <workItem from="1668110742880" duration="1339000" />
-      <workItem from="1668153490721" duration="4613000" />
-      <workItem from="1669511743373" duration="4300000" />
-      <workItem from="1669592613616" duration="14368000" />
-      <workItem from="1669688502119" duration="921000" />
+      <workItem from="1668153490721" duration="5502000" />
+      <workItem from="1669683248578" duration="3764000" />
     </task>
     <task id="LOCAL-00001" summary="commmited some changes to to the file">
       <created>1665696432739</created>
@@ -133,21 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668115903231</updated>
     </task>
-    <task id="LOCAL-00004" summary="Update with DMV and DOS upload">
-      <created>1669143235257</created>
+    <task id="LOCAL-00004" summary="Display card with info from all 3 databases">
+      <created>1668158328410</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1669143235257</updated>
+      <updated>1668158328410</updated>
     </task>
-    <task id="LOCAL-00005" summary="Added add page for SS">
-      <created>1669625418375</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669625418375</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,9 +182,7 @@
     <MESSAGE value="added a refresh button with state" />
     <MESSAGE value="changed the lighting to the world model and made added some animations" />
     <MESSAGE value="Display card with info from all 3 databases" />
-    <MESSAGE value="Update with DMV and DOS upload" />
-    <MESSAGE value="Added add page for SS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added add page for SS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Display card with info from all 3 databases" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
