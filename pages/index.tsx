@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import DemoCard from "../components/Card/demoCard";
 import {WorldView} from '../components/threejs/world'
 import {motion} from 'framer-motion'
 
@@ -16,21 +15,20 @@ export const Home = () => {
           <motion.div initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: 1.5 }}>
-            <DemoCard/>
           </motion.div>
-          <div id="card container" className="z-10 m-5 flex h-fit w-full flex-col gap-8 rounded-2xl p-3">
+          <div id="card container" className="z-10 m-5 flex h-full w-full flex-col gap-8 rounded-2xl p-3">
             <motion.h1
                 unselectable={'on'}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1 }}
-              className="z-10 text-8xl font-bold text-neutral-800"
+              className="z-10 text-8xl font-bold text-blue-500"
             >
               travel.x makes it <span className="text-green-300">easy.</span>
             </motion.h1>
           </div>
         </div>
-        <WorldView />
+          <WorldView />
       </div>
 
 

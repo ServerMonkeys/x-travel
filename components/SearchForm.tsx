@@ -1,10 +1,15 @@
 import {ChangeEvent, FormEvent, useState} from 'react'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 
 
 export const SearchForm = ({ onChange }: any) => {
   const [ssn, setSSN] = useState<string>()
-  return <motion.form className=" w-96 m-10" onSubmit={function (e: FormEvent<HTMLFormElement
+  return <motion.form
+      className=" w-96 my-8 mx-2 mb-3 z-30"
+      initial={{opacity:0, scale: 0.8}}
+      animate={{opacity:1, scale:1}}
+      transition={{duration:0.8}}
+      onSubmit={function (e: FormEvent<HTMLFormElement
       >): void {
     e.preventDefault()
     onChange(ssn)
@@ -24,7 +29,7 @@ export const SearchForm = ({ onChange }: any) => {
           value={ssn}
           type={"text"}
           id="p-search"
-          className=" block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-full border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className=" font-Manrope font-semibold text-blue-900 block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-full border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           name="ssn"
           minLength={9}
           maxLength={9}
