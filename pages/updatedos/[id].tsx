@@ -28,7 +28,7 @@ function Id() {
     }
 
 
-    async function handleOnSubmit(event: any) {
+    async function handleOnSubmit(event) {
         event.preventDefault();
 
         const form = event.currentTarget;
@@ -86,10 +86,10 @@ function Id() {
                     
                     dark:shadow-none
                     dark:border-b-neutral-50
-                    justify-center text-center items-center `}
+                    justify-center text-center items-center rounded-2xl `}
 
                 >
-                    <div className={`dark:text-slate-20 dark:bg-black bg-neutral-50/90 pb-8  rounded-t-xl p-1 w-fit w-96 px-10 h-fit  select-none cursor-pointer flex flex-col gap-2 justify-center items-center`}>
+                    <div className={`dark:text-slate-20 dark:bg-black bg-neutral-50/90 pb-8  rounded-xl p-1 w-fit w-96 px-10 h-fit m-1 select-none cursor-pointer flex flex-col gap-2 justify-center items-center`}>
                         <div className='font-Manrope flex flex-col justify-center items-center  m-2 p-2 px-4 rounded-xl'>
                             <h2 className={'text-2xl font-semibold text-neutral-500 z-10 '}>Department of State</h2>
                             <div className={"w-full flex justify-end items-center"}>
@@ -141,11 +141,12 @@ function Id() {
                                     </form>
                                 </label>
                             </div>
+
                         </div>
                     </div>
-                    <div className={"mb-2 w-full "}>
+                    <div className={"mb-2"}>
                         <motion.button onClick={handleSubmit}
-                                       className="bg-blue-500 hover:bg-blue-600  w-full text-white font-bold py-2 px-4 rounded-b-full -mt-1.5"
+                                       className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
                                        whileTap={{scale:0.9}}
                         >
                             Save
