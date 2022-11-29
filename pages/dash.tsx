@@ -64,6 +64,7 @@ export const Dash: NextPage = () => {
   // @ts-ignore
     // @ts-ignore
     function sendDMVProps() {
+
         Router.push({
             pathname: "/updatedmv/[pid]",
             query: {pid: DMV_data._id}
@@ -91,7 +92,7 @@ export const Dash: NextPage = () => {
                     animate={{opacity:1, scale:1}}
                     transition={{duration:0.8}}
                     type="button"
-                    className="inline-flex items-center justify-center my-10 mb-6 w-auto h-10 px-2 py-2 space-x-2 text-sm font-medium text-white bg-blue-700
+                    className=" z-30 inline-flex items-center justify-center my-10 mb-6 w-auto h-10 px-2 py-2 space-x-2 text-sm font-medium text-white bg-blue-700
                                 border border-blue-700 rounded-full appearance-none cursor-pointer select-none hover:border-blue-800
                                 focus:outline-none focus:ring-2 focus:ring-blue-300  disabled:opacity-75"
                     whileHover={{ scale:1.05 }}
@@ -116,12 +117,15 @@ export const Dash: NextPage = () => {
                                   pass_exp={DOS_data.passport_exp} pass_num={DOS_data.passport_num} status={verifyStatus} address={DMV_data.street_address + ", " + DMV_data.city + ", " + DMV_data.state + ", " + DMV_data.country + ", " +DMV_data.zip_code} phone_num={DMV_data.phone_num}/>
 
                 </motion.div>
-                    <motion.div className={'flex flex-row gap-1 justify-center mt-8 font-Manrope'}
+                    <motion.div className={'flex flex-col gap-4 justify-center mt-8 font-Manrope text-center'}
                                 initial={{opacity:0, scale:1, y:-100}} animate={{ opacity:1, scale:1, y:0}} transition={{ delay: 3.5, duration:0.75}}
 
                     >
-                        <button className =" flex justify-between  py-2  bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={() => sendDMVProps()}>Update DMV</button>
-                        <button className ="flex justify-between py-2 bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded" onClick={() => sendDOSProps()}>Update DOS</button>
+                        <h2 className="font-Manrope text-lg">something missing?</h2>
+                        <div className="flex flex-row gap-1">
+                            <button className =" flex justify-between  py-2  bg-red-400 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={() => sendDMVProps()}>Update DMV</button>
+                            <button  className ="flex justify-between py-2 bg-red-400 hover:bg-blue-700 text-white  py-2 px-4 rounded" onClick={() => sendDOSProps()}>Update DOS</button>
+                        </div>
                     </motion.div>
                 </>
             }
