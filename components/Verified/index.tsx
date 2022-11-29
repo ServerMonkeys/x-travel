@@ -21,7 +21,7 @@ type NProps = {
 // serves as a container for all the information
 export const Notification = (props: NProps) => {
   return (
-      <div className={`w-screen flex flex-col justify-items-start items-center`}>
+      <div className={`w-800 p-6 -mt-12 flex flex-col justify-items-start items-center bg-neutral-50/80 overflow-visible rounded-md`}>
     <motion.div
         className={`min-w-fit max-w-md mt-5 rounded-2xl bg-contain  bg-center select-none`}
     >
