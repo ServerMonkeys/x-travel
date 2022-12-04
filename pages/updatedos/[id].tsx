@@ -142,6 +142,8 @@ function Id() {
                             </div>
                         </div>
                     </div>
+
+                    {(!imageSrc || uploadData) && (
                     <div className={"mb-2 w-full "}>
                         <motion.button onClick={handleSubmit}
                                        className="bg-blue-500 hover:bg-blue-600  w-full text-white font-bold py-2 px-4 rounded-b-full -mt-1.5"
@@ -150,6 +152,7 @@ function Id() {
                             Save
                         </motion.button>
                     </div>
+                    )}
                 </motion.div>
             </div>
     </div>

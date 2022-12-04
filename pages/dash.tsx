@@ -15,6 +15,8 @@ import {BaseCard} from '../components/Card/Card'
 import Notification from '../components/Verified'
 import verifyData from '../helper/verifyData';
 import Router from "next/router";
+import Link from 'next/link'
+import {withPageAuthRequired} from "@auth0/nextjs-auth0";
 
 export const Dash: NextPage = () => {
 
@@ -122,9 +124,20 @@ export const Dash: NextPage = () => {
 
                     >
                         <h2 className="font-Manrope text-lg">something missing?</h2>
-                        <div className="flex flex-row gap-1">
+                        <div className="flex flex-row gap-1 justify-center items-center">
                             <button className =" flex justify-between  py-2  bg-red-400 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={() => sendDMVProps()}>Update DMV</button>
                             <button  className ="flex justify-between py-2 bg-red-400 hover:bg-blue-700 text-white  py-2 px-4 rounded" onClick={() => sendDOSProps()}>Update DOS</button>
+                        </div>
+                        <div className="flex flex-row gap-1 justify-center items-center">
+                            <Link href="/dosadd" passHref>
+                                <button className =" flex justify-between  py-2  bg-red-400 hover:bg-blue-700 text-white py-2 px-4 rounded">Add DOS</button>
+                            </Link>
+                            <Link href="/ssadd" passHref>
+                                <button className =" flex justify-between  py-2  bg-red-400 hover:bg-blue-700 text-white py-2 px-4 rounded">Add SS</button>
+                            </Link>
+                            <Link href="/dmvadd" passHref>
+                                <button className =" flex justify-between  py-2  bg-red-400 hover:bg-blue-700 text-white py-2 px-4 rounded">Add DMV</button>
+                            </Link>
                         </div>
                     </motion.div>
                 </>
@@ -133,4 +146,6 @@ export const Dash: NextPage = () => {
       </div>
   )
 }
+
+export const getServerSideProps = withPageAuthRequired()
 export default Dash

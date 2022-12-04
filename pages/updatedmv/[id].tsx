@@ -92,7 +92,7 @@ function Id() {
                         </h2>
                         <div className={"flex flex-col gap-1.5"}>
 
-                            <h2 className="text-gray-500 space-y-8 text-lg font-medium mb-2"> Update Driver's License # </h2>
+                            <h2 className="text-gray-500 space-y-8 text-lg font-medium mb-2"> Update Driver's License # 🪪</h2>
                             <input className="rounded border text-black rounded-full text-center font-semibold text-blue-900" minLength={8}
                                    maxLength={8}
                                    type={"text"}
@@ -129,11 +129,13 @@ function Id() {
                             </div>
                         </div>
                     </div>
+                    {(!imageSrc || uploadData) && (
                     <div className={"w-6/12 -mt-2"}>
                         <button onClick={handleSubmit} className=" rounded-b-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full" >
                             Save
                         </button>
                     </div>
+                    )}
                 </motion.div>
             </div>
             </div>

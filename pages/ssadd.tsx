@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {motion} from "framer-motion";
 import {addSS} from "../helper/fetchData";
 import Router from "next/router";
+import {withPageAuthRequired} from "@auth0/nextjs-auth0";
 
 function SSadd() {
     const [fname,updateFname] = useState("");
@@ -17,7 +18,7 @@ function SSadd() {
 
     const handleSubmit = async (event:any) => {
         event.preventDefault();
-        await addSS(ssn,fname,lname,dob,street,city,state,zip,country,job);
+        await addSS(ssn,fname.toUpperCase(),lname.toUpperCase(),dob,street,city,state,zip,country,job);
         await Router.push({pathname:"/dash"});
     }
 
@@ -154,6 +155,6 @@ function SSadd() {
 
     )
 }
-
+export const getServerSideProps = withPageAuthRequired()
 export default SSadd;
 

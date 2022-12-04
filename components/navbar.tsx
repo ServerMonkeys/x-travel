@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { useUser } from '@auth0/nextjs-auth0'
+import {useUser} from '@auth0/nextjs-auth0'
 import Link from 'next/link'
 import React from 'react'
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 
 export default function Navbar() {
   const { user, isLoading } = useUser()
@@ -22,13 +22,36 @@ export default function Navbar() {
                 </div>
                 <div className="flex items-center space-x-1">
                   {!isLoading && user && (
-                    <a
-                      href="/dash"
-                      className="hidden md:flex py-5 px-2 text-slate-300
-                      hover:text-violet-700"
-                    >
-                      Dashboard
-                    </a>
+                      <>
+                        <a
+                          href="/dash"
+                          className="hidden md:flex py-5 px-2 text-slate-300
+                          hover:text-violet-700"
+                        >
+                          Dashboard
+                        </a>
+                        <a
+                            href="/dosadd"
+                            className="hidden md:flex py-5 px-2 text-slate-300
+                            hover:text-violet-700"
+                        >
+                          Add DOS
+                        </a>
+                        <a
+                            href="/ssadd"
+                            className="hidden md:flex py-5 px-2 text-slate-300
+                            hover:text-violet-700"
+                        >
+                          Add SS
+                        </a>
+                        <a
+                            href="/dmvadd"
+                            className="hidden md:flex py-5 px-2 text-slate-300
+                            hover:text-violet-700"
+                        >
+                          Add DMV
+                        </a>
+                      </>
                   )}
                   <div>
                     <a
