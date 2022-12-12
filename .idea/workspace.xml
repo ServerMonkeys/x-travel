@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Added add page for SS">
-      <change afterPath="$PROJECT_DIR$/pages/dmvadd.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/dosadd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_22_22,_10_46_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_22_22__10_46_AM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Created add page for SS, DOS, DMV">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_22,_6_30_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_22__6_30_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dash.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ssadd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ssadd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/updatedmv/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/updatedmv/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/updatedos/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/updatedos/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contact.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +28,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -128,7 +127,10 @@
       <workItem from="1669868583007" duration="3897000" />
       <workItem from="1669873276114" duration="1212000" />
       <workItem from="1669912175364" duration="927000" />
-      <workItem from="1670104425974" duration="5877000" />
+      <workItem from="1670104425974" duration="7222000" />
+      <workItem from="1670130216449" duration="599000" />
+      <workItem from="1670732515112" duration="630000" />
+      <workItem from="1670823115413" duration="2363000" />
     </task>
     <task id="LOCAL-00001" summary="commmited some changes to to the file">
       <created>1665696432739</created>
@@ -165,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669689852710</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Created add page for SS, DOS, DMV">
+      <created>1670112663478</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670112663478</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +214,8 @@
     <MESSAGE value="changed the lighting to the world model and made added some animations" />
     <MESSAGE value="Display card with info from all 3 databases" />
     <MESSAGE value="Added add page for SS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added add page for SS" />
+    <MESSAGE value="Created add page for SS, DOS, DMV" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created add page for SS, DOS, DMV" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

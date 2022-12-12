@@ -1,9 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
 
 function contact() {
   return (
-    <div className='flex items-center justify-center h-screen bg-gray-100'>
+    <div className={"text-black"}>
+      <div className='flex items-center justify-center h-screen bg-gray-100'>
         <form action="https://submit-form.com/KuaUyBo0">
           <div className='text-3xl font-bold text-center'>Contact</div>
           <div className='bg-white w-96 p-6 rounded shadow-sm'>
@@ -30,11 +30,7 @@ function contact() {
             type="submit">Send</button>
           </div>
         </form>
-        <h2>
-        <Link href="/">
-          <a>Back to home</a>
-        </Link>
-      </h2>
+      </div>
     </div>
   )
 }

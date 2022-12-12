@@ -87,11 +87,7 @@ export const Home = () => {
           <h2 className="my-8 rounded-full p-3 text-5xl font-bold text-slate-700 font-Manrope">Travel Smart</h2>
           <div className="w-96">
             <p className={"text-neutral-800 font-semibold"}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum
+              Welcome to our TravelX! Our state-of-the-art system allows you to easily and quickly pass through US Immigration without the need to carry your passport or other personal identifying information. Simply provide your Social Security number and our system will query the Social Security Department, the Department of Motor Vehicles, and the Department of State to display the information needed for the Immigration agent to verify your identification. Say goodbye to the hassle of lost or forgotten documents and hello to a seamless and stress-free travel experience.
             </p>
           </div>
         </div>

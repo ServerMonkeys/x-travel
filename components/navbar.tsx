@@ -7,6 +7,7 @@ import {useRouter} from 'next/router'
 export default function Navbar() {
   const { user, isLoading } = useUser()
   const router = useRouter()
+
   return (
       <>
         <nav className="bg-slate-800 space-border shadow-md justify-center h-14 text-center flex items-center font-Manrope">
