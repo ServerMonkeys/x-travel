@@ -63,8 +63,8 @@ function DMVadd() {
     }
 
     return(
-        <div className={" bg-gradient-to-br from-stop1 to-stop2"}>
-            <div className=" h-screen flex flex-col items-center justify-start">
+        <div className={" bg-gradient-to-br from-stop1 to-stop2 min-h-fit"}>
+            <div className=" h-screen flex flex-col items-center justify-start min-h-fit">
                 <h1 className={"text-neutral-800 font-Manrope text-4xl font-light mt-14"}>Department of Motor Vehicles Information</h1>
                 <form className={"w-5/6 m-24 mt-16 mx-48 bg-yellow-50/80 p-8 rounded-xl "} onSubmit={handleSubmit}>
                     <div className="relative z-0 mb-6 w-full group">
