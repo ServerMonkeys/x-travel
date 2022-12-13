@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="73852dbb-b7c2-46bb-81e2-38b1672e276c" name="Changes" comment="Display card with info from all 3 databases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dmvadd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dmvadd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dosadd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dosadd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/updatedos/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/updatedos/[id].tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668158328410</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Display card with info from all 3 databases">
+      <created>1670962083578</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670962083578</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
